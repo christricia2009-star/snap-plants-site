@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Snap Plants support — contact us, FAQs about plant identification, privacy, and care features." />
+  <meta name="theme-color" content="#1B4332" />
+  <title>Support &amp; Contact — Snap Plants</title>
+  <link rel="icon" type="image/webp" href="../images/optimized/Icon.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: { DEFAULT: '#1B4332', mid: '#2D6A4F', deep: '#0d2818' },
+            sage: { DEFAULT: '#40916C', bright: '#52B788', soft: '#E8F5E9' },
+            cream: { DEFAULT: '#F7F4EF', deep: '#EFE9DF' },
+            gold: { DEFAULT: '#C4A35A', soft: '#E8D5A3' },
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+  <div class="leaves" aria-hidden="true">
+    <span class="leaf leaf-1"></span>
+    <span class="leaf leaf-3"></span>
+    <span class="leaf leaf-5"></span>
+  </div>
+
+  <header id="siteNav" class="site-nav fixed top-0 inset-x-0 z-50 h-[4.5rem]">
+    <div class="max-w-6xl mx-auto h-full px-4 flex items-center justify-between gap-4">
+      <a href="../" class="flex items-center gap-2.5 font-display font-semibold text-lg text-forest z-10">
+        <img src="../images/optimized/Icon.webp" alt="" width="36" height="36" class="rounded-[10px] shadow-md" />
+        Snap Plants
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-forest/70" aria-label="Primary">
+        <a href="../#how" class="nav-link hover:text-forest">How it works</a>
+        <a href="../#features" class="nav-link hover:text-forest">Features</a>
+        <a href="../support/" class="nav-link hover:text-forest text-forest">Support</a>
+      </nav>
+      <a href="../#waitlist" class="btn-primary !py-2.5 !px-4 !text-sm hidden md:inline-flex">Get notified</a>
+      <button type="button" id="menuToggle" class="md:hidden z-10 w-11 h-11 flex flex-col items-center justify-center gap-1.5" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="block w-5 h-0.5 bg-forest rounded"></span>
+        <span class="block w-5 h-0.5 bg-forest rounded"></span>
+        <span class="block w-5 h-0.5 bg-forest rounded"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[1] bg-cream/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 text-xl font-medium" hidden>
+      <a href="../">Home</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="#contact" class="btn-primary mt-2">Contact</a>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-28 pb-20">
+    <!-- Header -->
+    <section class="max-w-3xl mx-auto px-4 text-center mb-14">
+      <img src="../images/optimized/Icon.webp" alt="" width="56" height="56" class="rounded-2xl mx-auto mb-5 shadow-md" />
+      <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Support</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-semibold text-forest mb-4">We’re here to help</h1>
+      <p class="text-forest/70 text-lg leading-relaxed max-w-lg mx-auto">
+        Questions about identification, care guidance, or your collection? Reach out — we read every message.
+      </p>
+    </section>
+
+    <!-- Contact cards + form -->
+    <section id="contact" class="max-w-5xl mx-auto px-4 mb-20">
+      <div class="grid lg:grid-cols-5 gap-8">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="bg-white rounded-2xl border border-forest/10 p-6 shadow-sm">
+            <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-2">Email</p>
+            <a href="mailto:support@snapplants.app" class="text-lg font-semibold text-forest hover:text-sage transition">support@snapplants.app</a>
+            <p class="text-sm text-muted mt-3 leading-relaxed">
+              We aim to reply within <strong class="text-forest/80">1–2 business days</strong>.
+              For urgent safety concerns involving pets or people, contact a veterinarian or medical professional immediately.
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl border border-forest/10 p-6 shadow-sm">
+            <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-2">Helpful links</p>
+            <ul class="space-y-2.5 text-sm font-medium">
+              <li><a href="../privacy/" class="text-forest/70 hover:text-sage">Privacy Policy</a></li>
+              <li><a href="../terms/" class="text-forest/70 hover:text-sage">Terms of Service</a></li>
+              <li><a href="../#how" class="text-forest/70 hover:text-sage">How Snap Plants works</a></li>
+              <li><a href="../#waitlist" class="text-forest/70 hover:text-sage">Join the iOS waitlist</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 bg-white rounded-3xl border border-forest/10 p-6 sm:p-8 shadow-sm">
+          <h2 class="font-display text-2xl font-semibold text-forest mb-2">Send a message</h2>
+          <p class="text-sm text-muted mb-6">This preview form stores your message locally in the browser. Wire it to email or a backend before production.</p>
+
+          <form id="contactForm" class="space-y-4" novalidate>
+            <div>
+              <label for="name" class="block text-sm font-medium text-forest mb-1.5">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name"
+                class="w-full px-4 py-3 rounded-xl border border-forest/15 bg-cream/50 outline-none focus:border-sage focus:ring-2 focus:ring-sage/20 transition" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-forest mb-1.5">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="you@example.com"
+                class="w-full px-4 py-3 rounded-xl border border-forest/15 bg-cream/50 outline-none focus:border-sage focus:ring-2 focus:ring-sage/20 transition" />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-forest mb-1.5">Message</label>
+              <textarea id="message" name="message" required rows="5" minlength="10" placeholder="How can we help?"
+                class="w-full px-4 py-3 rounded-xl border border-forest/15 bg-cream/50 outline-none focus:border-sage focus:ring-2 focus:ring-sage/20 transition resize-y"></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full sm:w-auto">Send message</button>
+          </form>
+
+          <div id="contactSuccess" class="form-success mt-6 p-5 rounded-2xl bg-sage-soft border border-sage/20" hidden role="status">
+            <p class="font-semibold text-forest mb-1">Message saved</p>
+            <p class="text-sm text-forest/70">Thanks for reaching out. In production this will go to our support inbox. For now it’s stored on this device only.</p>
+            <p class="text-sm text-forest/70 mt-2">You can also email us directly at <a href="mailto:support@snapplants.app" class="text-sage font-medium underline">support@snapplants.app</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-3xl mx-auto px-4">
+      <header class="text-center mb-10">
+        <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">FAQ</p>
+        <h2 class="font-display text-3xl font-semibold text-forest">Common questions</h2>
+      </header>
+
+      <div class="space-y-3">
+        <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm open:shadow-md transition">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
+            How accurate is plant identification?
+            <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
+            Snap Plants uses AI models to suggest a plant name and confidence score. Accuracy depends on photo quality, lighting, plant uniqueness, and the model in use.
+            Results are educational — always verify important decisions (especially toxicity or edibility) with trusted sources or a professional.
+          </div>
+        </details>
+
+        <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
+            Does Snap Plants work offline?
+            <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
+            Your saved collection and past diagnoses may be available on-device, but new AI identification typically requires a network connection
+            to reach the model provider. Offline capabilities may expand over time.
+          </div>
+        </details>
+
+        <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
+            What happens to my plant photos?
+            <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
+            Photos are used to identify plants and power care guidance. We don’t sell your photos or use them for advertising.
+            See our <a href="../privacy/" class="text-sage font-medium underline">Privacy Policy</a> for full details on camera use, third-party AI processing, and retention.
+          </div>
+        </details>
+
+        <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
+            What kinds of plants can I identify?
+            <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
+            You can choose categories such as houseplants, succulents &amp; cacti, outdoor garden plants, trees &amp; shrubs,
+            herbs, vegetables, wildflowers/weeds — or tap “Not Sure?” Coverage depends on the AI model and photo quality;
+            rare cultivars or poor images may be harder to identify.
+          </div>
+        </details>
+
+        <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
+            When will Snap Plants be on iOS and Android?
+            <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
+            iOS is first. Join the <a href="../#waitlist" class="text-sage font-medium underline">waitlist</a> to get notified when we launch on the App Store.
+            Android is planned for a later release.
+          </div>
+        </details>
+
+        <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
+            Is care advice safe for pets?
+            <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
+            Snap Plants may show toxicity notes for pets and humans when available, but this is AI-generated educational information only.
+            Always verify with a veterinarian or poison control for real-world safety decisions. When in doubt, keep plants out of reach.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-forest/10 bg-cream-deep py-12">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-6 text-center">
+      <div class="flex items-center gap-3">
+        <img src="../images/optimized/Icon.webp" alt="" width="40" height="40" class="rounded-xl" />
+        <div class="text-left">
+          <strong class="font-display text-forest block">Snap Plants</strong>
+          <span class="text-xs text-muted">Identify plants. Care with confidence.</span>
+        </div>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-5 text-sm font-medium text-forest/70" aria-label="Footer">
+        <a href="../" class="hover:text-sage">Home</a>
+        <a href="../privacy/" class="hover:text-sage">Privacy Policy</a>
+        <a href="../terms/" class="hover:text-sage">Terms of Service</a>
+        <a href="../support/" class="hover:text-sage">Support</a>
+      </nav>
+      <p class="text-xs text-muted">Coming soon on the App Store</p>
+      <p class="text-xs text-muted">&copy; <span data-year>2026</span> Snap Plants. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../js/site.js" defer></script>
+</body>
+</html>
