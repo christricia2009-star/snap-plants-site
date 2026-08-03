@@ -76,16 +76,85 @@
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      const navH = nav ? nav.offsetHeight : 72;
+      const banner = document.querySelector(".testing-banner");
+      const navH = (nav ? nav.offsetHeight : 72) + (banner ? banner.offsetHeight : 0);
       const top = target.getBoundingClientRect().top + window.scrollY - navH - 8;
       window.scrollTo({ top, behavior: reduced ? "auto" : "smooth" });
       if (history.pushState) history.pushState(null, "", id);
     });
   });
 
-  /* Walkthrough */
-  const walk = document.querySelector("[data-walkthrough]");
-  if (walk) {
+  /* Platform switcher (iOS / Android) */
+  const PLATFORM_KEY = "snap-plants-platform";
+  const platformBtns = document.querySelectorAll("[data-set-platform]");
+  const platformPanels = document.querySelectorAll("[data-platform-panel]");
+  const platformTexts = document.querySelectorAll("[data-platform-text]");
+
+  function setPlatform(platform) {
+    if (platform !== "ios" && platform !== "android") platform = "ios";
+    document.body.setAttribute("data-platform", platform);
+    try {
+      localStorage.setItem(PLATFORM_KEY, platform);
+    } catch (_) {}
+
+    platformBtns.forEach((btn) => {
+      const on = btn.getAttribute("data-set-platform") === platform;
+      btn.classList.toggle("is-active", on);
+      btn.setAttribute("aria-selected", on ? "true" : "false");
+    });
+
+    platformPanels.forEach((el) => {
+      const match = el.getAttribute("data-platform-panel") === platform;
+      if (match) {
+        el.hidden = false;
+        el.removeAttribute("hidden");
+      } else {
+        el.hidden = true;
+        el.setAttribute("hidden", "");
+      }
+    });
+
+    platformTexts.forEach((el) => {
+      const match = el.getAttribute("data-platform-text") === platform;
+      if (match) {
+        el.hidden = false;
+        el.removeAttribute("hidden");
+      } else {
+        el.hidden = true;
+        el.setAttribute("hidden", "");
+      }
+    });
+
+    // Sync hash for shareable platform view
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set("platform", platform);
+      history.replaceState(null, "", url.pathname + url.search + url.hash);
+    } catch (_) {}
+  }
+
+  platformBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setPlatform(btn.getAttribute("data-set-platform"));
+    });
+  });
+
+  // Init platform: URL > localStorage > default ios
+  (function initPlatform() {
+    let initial = "ios";
+    try {
+      const q = new URLSearchParams(window.location.search).get("platform");
+      if (q === "ios" || q === "android") initial = q;
+      else {
+        const stored = localStorage.getItem(PLATFORM_KEY);
+        if (stored === "ios" || stored === "android") initial = stored;
+      }
+    } catch (_) {}
+    setPlatform(initial);
+  })();
+
+  /* Walkthrough (supports multiple platform panels) */
+  function initWalkthrough(walk) {
     const panels = Array.from(walk.querySelectorAll("[data-step-panel]"));
     const tabs = Array.from(walk.querySelectorAll("[data-step]"));
     const pips = Array.from(walk.querySelectorAll("[data-pip]"));
@@ -93,6 +162,7 @@
     const next = walk.querySelector("[data-walk-next]");
     let current = 0;
     const total = panels.length;
+    if (!total) return;
 
     function goTo(i) {
       if (i < 0 || i >= total) return;
@@ -100,6 +170,8 @@
       panels.forEach((p, idx) => {
         const on = idx === current;
         p.hidden = !on;
+        if (on) p.removeAttribute("hidden");
+        else p.setAttribute("hidden", "");
         p.classList.toggle("is-active", on);
       });
       tabs.forEach((t, idx) => {
@@ -153,18 +225,10 @@
       );
     }
 
-    walk.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") {
-        e.preventDefault();
-        goTo(Math.min(current + 1, total - 1));
-      } else if (e.key === "ArrowLeft") {
-        e.preventDefault();
-        goTo(Math.max(current - 1, 0));
-      }
-    });
-
     goTo(0);
   }
+
+  document.querySelectorAll("[data-walkthrough]").forEach(initWalkthrough);
 
   /* Lightbox */
   const lightbox = document.getElementById("lightbox");

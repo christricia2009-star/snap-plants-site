@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Snap Plants — identify any plant with a photo and get calm, clear care guidance. Coming soon on iOS." />
+  <meta name="description" content="Snap Plants — AI plant identification & care for iOS and Android. Currently in testing on both platforms." />
   <meta name="theme-color" content="#1B4332" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>Snap Plants — Know every plant you love</title>
+  <title>Snap Plants — iOS &amp; Android plant ID (in testing)</title>
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Snap Plants — Know every plant you love" />
-  <meta property="og:description" content="Snap a photo. Get a name, confidence score, and calm care guidance for every plant you love." />
+  <meta property="og:description" content="Snap a photo. Get calm care guidance. Available in testing for iOS and Android." />
   <meta property="og:image" content="images/optimized/Icon.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Snap Plants" />
-  <meta name="twitter:description" content="AI plant identification & care. Coming soon on iOS." />
+  <meta name="twitter:description" content="AI plant identification & care. In testing on iOS and Android." />
 
   <link rel="icon" type="image/webp" href="images/optimized/Icon.webp" />
   <link rel="apple-touch-icon" href="images/Icon.jpg" />
@@ -45,7 +44,7 @@
   </script>
   <link rel="stylesheet" href="css/site.css" />
 </head>
-<body class="bg-cream text-ink antialiased overflow-x-hidden">
+<body class="bg-cream text-ink antialiased overflow-x-hidden" data-platform="ios">
   <div class="leaves" aria-hidden="true">
     <span class="leaf leaf-1"></span>
     <span class="leaf leaf-2"></span>
@@ -55,21 +54,42 @@
     <span class="leaf leaf-6"></span>
   </div>
 
+  <!-- Testing banner -->
+  <div class="testing-banner" role="status">
+    <span class="testing-banner__dot" aria-hidden="true"></span>
+    <span><strong>Both platforms in testing</strong> — iOS &amp; Android · Feedback:
+      <a href="mailto:testing@snapplants.com">testing@snapplants.com</a>
+    </span>
+  </div>
+
   <!-- Nav -->
-  <header id="siteNav" class="site-nav fixed top-0 inset-x-0 z-50 h-[4.5rem]">
-    <div class="max-w-6xl mx-auto h-full px-4 flex items-center justify-between gap-4">
-      <a href="/" class="flex items-center gap-2.5 font-display font-semibold text-lg text-forest z-10">
+  <header id="siteNav" class="site-nav fixed inset-x-0 z-50">
+    <div class="max-w-6xl mx-auto h-[4.5rem] px-4 flex items-center justify-between gap-3">
+      <a href="/" class="flex items-center gap-2.5 font-display font-semibold text-lg text-forest z-10 shrink-0">
         <img src="images/optimized/Icon.webp" alt="" width="36" height="36" class="rounded-[10px] shadow-md" />
-        Snap Plants
+        <span class="hidden sm:inline">Snap Plants</span>
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-forest/70" aria-label="Primary">
+
+      <!-- Platform switcher -->
+      <div class="platform-switch" role="tablist" aria-label="Choose platform">
+        <button type="button" class="platform-switch__btn is-active" role="tab" aria-selected="true" data-set-platform="ios">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          iOS
+        </button>
+        <button type="button" class="platform-switch__btn" role="tab" aria-selected="false" data-set-platform="android">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 00-.83.22l-1.88 3.24a11.43 11.43 0 00-8.94 0L5.65 5.67a.643.643 0 00-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.81 10.81 0 001 18h22a10.81 10.81 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
+          Android
+        </button>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-forest/70" aria-label="Primary">
         <a href="#how" class="nav-link hover:text-forest">How it works</a>
         <a href="#features" class="nav-link hover:text-forest">Features</a>
         <a href="#gallery" class="nav-link hover:text-forest">Gallery</a>
         <a href="support/" class="nav-link hover:text-forest">Support</a>
       </nav>
-      <a href="#waitlist" class="btn-primary !py-2.5 !px-4 !text-sm hidden md:inline-flex">Get notified</a>
-      <button type="button" id="menuToggle" class="md:hidden z-10 w-11 h-11 flex flex-col items-center justify-center gap-1.5" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <a href="#waitlist" class="btn-primary !py-2.5 !px-4 !text-sm hidden md:inline-flex">Send feedback</a>
+      <button type="button" id="menuToggle" class="lg:hidden z-10 w-11 h-11 flex flex-col items-center justify-center gap-1.5" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span class="block w-5 h-0.5 bg-forest rounded"></span>
         <span class="block w-5 h-0.5 bg-forest rounded"></span>
         <span class="block w-5 h-0.5 bg-forest rounded"></span>
@@ -80,13 +100,13 @@
       <a href="#features">Features</a>
       <a href="#gallery">Gallery</a>
       <a href="support/">Support</a>
-      <a href="#waitlist" class="btn-primary mt-2">Get notified</a>
+      <a href="#waitlist" class="btn-primary mt-2">Send feedback</a>
     </div>
   </header>
 
   <main>
     <!-- Hero -->
-    <section class="relative min-h-[100svh] flex flex-col justify-center pt-24 pb-16 overflow-hidden">
+    <section class="relative min-h-[100svh] flex flex-col justify-center pt-[7.5rem] pb-16 overflow-hidden">
       <div class="hero-rays" aria-hidden="true"></div>
       <div class="hero-ray-beam" aria-hidden="true"></div>
       <div class="hero-ray-beam" aria-hidden="true"></div>
@@ -94,35 +114,39 @@
       <div class="relative z-10 max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
         <div class="reveal">
           <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-forest-mid mb-4">
-            <span class="w-2 h-2 rounded-full bg-sage pulse-dot"></span>
-            Coming soon on iOS
+            <span class="w-2 h-2 rounded-full bg-gold pulse-dot"></span>
+            <span data-platform-text="ios">iOS · In testing</span>
+            <span data-platform-text="android" hidden>Android · In testing</span>
           </p>
           <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold leading-[1.12] tracking-tight text-forest mb-5">
             Know every plant<br />
             <em class="not-italic italic bg-gradient-to-r from-sage to-gold bg-clip-text text-transparent">you love</em>
           </h1>
-          <p class="text-base sm:text-lg text-forest/70 max-w-md leading-relaxed mb-8">
+          <p class="text-base sm:text-lg text-forest/70 max-w-md leading-relaxed mb-6">
             Snap a photo. Get a name, confidence score, and calm care guidance —
-            light, water, soil, toxicity, and more. Your personal plant companion.
+            light, water, soil, toxicity, and more. Your personal plant companion on
+            <strong class="text-forest font-semibold">iOS and Android</strong>.
           </p>
           <div class="flex flex-wrap gap-3 mb-6">
             <a href="#how" class="btn-primary btn-magnetic">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2v11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="2"/></svg>
               Identify Your Plant
             </a>
-            <a href="#features" class="btn-ghost">Explore Care Guides</a>
+            <a href="#features" class="btn-ghost">Explore features</a>
           </div>
           <p class="flex items-center gap-2 text-sm text-muted font-medium">
-            <img src="images/optimized/Icon.webp" alt="" width="20" height="20" class="rounded-md" />
-            AI plant ID · Deep care · Your collection
+            <img src="images/optimized/Icon.webp" alt="" width="20" height="20" class="rounded-md" data-platform-icon />
+            <span data-platform-text="ios">AI plant ID · Deep care · Your collection</span>
+            <span data-platform-text="android" hidden>Snap · AI Botanist · Encyclopedia · Collection</span>
           </p>
         </div>
 
-        <div class="relative reveal reveal-delay-1" data-parallax>
-          <div class="phone phone-lg phone-tilt">
+        <!-- iOS hero phone -->
+        <div class="relative reveal reveal-delay-1" data-platform-panel="ios" data-parallax>
+          <div class="phone phone-lg phone-tilt phone--ios">
             <div class="phone-frame">
               <div class="phone-notch" aria-hidden="true"></div>
-              <img src="images/optimized/Scan.webp" alt="Snap Plants — choose a plant category to identify" width="900" height="1948" class="phone-screen" fetchpriority="high" />
+              <img src="images/optimized/Scan.webp" alt="Snap Plants iOS — choose a plant category" width="900" height="1948" class="phone-screen" fetchpriority="high" />
             </div>
           </div>
           <div class="absolute top-[6%] left-0 w-[72px] h-[72px] rounded-2xl overflow-hidden shadow-xl float-slow z-10">
@@ -130,6 +154,22 @@
           </div>
           <div class="absolute bottom-[16%] right-0 float-slower z-10">
             <span class="inline-block px-4 py-2 rounded-full bg-white/95 border border-forest/10 shadow-lg text-sm font-bold text-sage">95% match</span>
+          </div>
+        </div>
+
+        <!-- Android hero phone -->
+        <div class="relative reveal reveal-delay-1" data-platform-panel="android" hidden data-parallax>
+          <div class="phone phone-lg phone-tilt phone--android">
+            <div class="phone-frame phone-frame--android">
+              <div class="phone-punch" aria-hidden="true"></div>
+              <img src="images/android/optimized/scan.webp" alt="Snap Plants Android — camera identify" width="900" height="1600" class="phone-screen" />
+            </div>
+          </div>
+          <div class="absolute top-[6%] left-0 w-[72px] h-[72px] rounded-2xl overflow-hidden shadow-xl float-slow z-10">
+            <img src="images/android/optimized/icon.webp" alt="" width="72" height="72" class="w-full h-full object-cover" />
+          </div>
+          <div class="absolute bottom-[16%] right-0 float-slower z-10">
+            <span class="inline-block px-4 py-2 rounded-full bg-white/95 border border-forest/10 shadow-lg text-sm font-bold text-sage">AI Botanist</span>
           </div>
         </div>
       </div>
@@ -140,17 +180,18 @@
       </a>
     </section>
 
-    <!-- How it works -->
-    <section id="how" class="relative z-10 py-20 sm:py-28 bg-gradient-to-b from-transparent via-sage-soft/50 to-transparent">
+    <div id="how" class="scroll-anchor" aria-hidden="true"></div>
+    <!-- How it works — iOS -->
+    <section class="relative z-10 py-20 sm:py-28 bg-gradient-to-b from-transparent via-sage-soft/50 to-transparent" data-platform-panel="ios">
       <div class="max-w-6xl mx-auto px-4">
         <header class="text-center max-w-xl mx-auto mb-12 reveal">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">How it works</p>
+          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">How it works · iOS</p>
           <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">Four steps from snap<br />to thriving green</h2>
-          <p class="text-forest/70 leading-relaxed">A guided walkthrough of the Snap Plants experience — the same calm flow you’ll feel in the app.</p>
+          <p class="text-forest/70 leading-relaxed">A guided walkthrough of the iOS Snap Plants experience.</p>
         </header>
 
         <div class="max-w-4xl mx-auto" data-walkthrough>
-          <div class="grid grid-cols-4 gap-1.5 p-1 mb-10 bg-white rounded-2xl border border-forest/10 shadow-sm" role="tablist" aria-label="Walkthrough steps">
+          <div class="grid grid-cols-4 gap-1.5 p-1 mb-10 bg-white rounded-2xl border border-forest/10 shadow-sm" role="tablist" aria-label="iOS walkthrough steps">
             <button type="button" class="walk-tab is-active flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="true" data-step="0">
               <span class="text-[0.65rem] font-bold tracking-wide opacity-75">01</span>
               <span class="text-xs sm:text-sm font-semibold">Snap</span>
@@ -170,12 +211,11 @@
           </div>
 
           <div data-walk-stage class="min-h-[420px]">
-            <!-- Step 0 -->
             <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="0" role="tabpanel">
               <div>
                 <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 01</span>
                 <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Snap &amp; choose a category</h3>
-                <p class="text-forest/70 leading-relaxed mb-5">Open Snap, pick a type — houseplants, succulents, herbs, wildflowers — or tap <strong class="text-forest">Not Sure?</strong> Point your camera. That’s the whole setup.</p>
+                <p class="text-forest/70 leading-relaxed mb-5">Open Snap, pick a type — houseplants, succulents, herbs — or tap <strong class="text-forest">Not Sure?</strong> Point your camera.</p>
                 <ul class="space-y-2.5 text-sm font-medium text-forest/70">
                   <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Houseplants, succulents &amp; cacti</li>
                   <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Outdoor garden, trees &amp; shrubs</li>
@@ -183,21 +223,17 @@
                 </ul>
               </div>
               <div class="flex justify-center">
-                <div class="phone">
-                  <div class="phone-frame">
-                    <div class="phone-notch" aria-hidden="true"></div>
-                    <img src="images/optimized/Scan.webp" alt="Category selection screen" class="phone-screen" loading="lazy" width="900" height="1948" />
-                  </div>
-                </div>
+                <div class="phone phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                  <img src="images/optimized/Scan.webp" alt="iOS category selection" class="phone-screen" loading="lazy" />
+                </div></div>
               </div>
             </article>
 
-            <!-- Step 1 -->
             <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="1" role="tabpanel" hidden>
               <div>
                 <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 02</span>
                 <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Instant plant reveal</h3>
-                <p class="text-forest/70 leading-relaxed mb-5">Meet your plant by name — common and scientific — with a clear confidence score and a care snapshot at a glance.</p>
+                <p class="text-forest/70 leading-relaxed mb-5">Meet your plant by name with a clear confidence score and a care snapshot at a glance.</p>
                 <ul class="space-y-2.5 text-sm font-medium text-forest/70">
                   <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Common + botanical name</li>
                   <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Confidence percentage</li>
@@ -205,21 +241,17 @@
                 </ul>
               </div>
               <div class="flex justify-center">
-                <div class="phone">
-                  <div class="phone-frame">
-                    <div class="phone-notch" aria-hidden="true"></div>
-                    <img src="images/optimized/Plant1.webp" alt="Snake Plant diagnosis with 95% confidence" class="phone-screen" loading="lazy" width="900" height="1948" />
-                  </div>
-                </div>
+                <div class="phone phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                  <img src="images/optimized/Plant1.webp" alt="iOS plant diagnosis" class="phone-screen" loading="lazy" />
+                </div></div>
               </div>
             </article>
 
-            <!-- Step 2 -->
             <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="2" role="tabpanel" hidden>
               <div>
                 <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 03</span>
                 <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Care that goes deeper</h3>
-                <p class="text-forest/70 leading-relaxed mb-5">Beyond the basics: soil, pests, symptoms, toxicity notes, and trusted resources — all in one calm diagnosis view.</p>
+                <p class="text-forest/70 leading-relaxed mb-5">Soil, pests, symptoms, toxicity notes, and trusted resources — all in one calm diagnosis view.</p>
                 <ul class="space-y-2.5 text-sm font-medium text-forest/70">
                   <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Symptoms &amp; care advice</li>
                   <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Pet &amp; human toxicity notes</li>
@@ -227,27 +259,20 @@
                 </ul>
               </div>
               <div class="walk-stack w-full max-w-sm mx-auto">
-                <div class="phone phone-back">
-                  <div class="phone-frame">
-                    <div class="phone-notch" aria-hidden="true"></div>
-                    <img src="images/optimized/Plant3.webp" alt="Toxicity notes and resources" class="phone-screen" loading="lazy" width="900" height="1948" />
-                  </div>
-                </div>
-                <div class="phone phone-front">
-                  <div class="phone-frame">
-                    <div class="phone-notch" aria-hidden="true"></div>
-                    <img src="images/optimized/Plant2.webp" alt="Detailed care advice" class="phone-screen" loading="lazy" width="900" height="1948" />
-                  </div>
-                </div>
+                <div class="phone phone-back phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                  <img src="images/optimized/Plant3.webp" alt="Toxicity notes" class="phone-screen" loading="lazy" />
+                </div></div>
+                <div class="phone phone-front phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                  <img src="images/optimized/Plant2.webp" alt="Care advice" class="phone-screen" loading="lazy" />
+                </div></div>
               </div>
             </article>
 
-            <!-- Step 3 -->
             <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="3" role="tabpanel" hidden>
               <div>
                 <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 04</span>
                 <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Save &amp; track your collection</h3>
-                <p class="text-forest/70 leading-relaxed mb-5">Save plants to My Plants, revisit diagnosis history, and keep wishlist lists organized. Your green family, all in one place.</p>
+                <p class="text-forest/70 leading-relaxed mb-5">Save plants to My Plants, revisit diagnosis history, and keep lists organized.</p>
                 <ul class="space-y-2.5 text-sm font-medium text-forest/70">
                   <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>My Plants with search &amp; tabs</li>
                   <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Diagnosis history over time</li>
@@ -255,113 +280,205 @@
                 </ul>
               </div>
               <div class="walk-stack w-full max-w-sm mx-auto">
-                <div class="phone phone-back">
-                  <div class="phone-frame">
-                    <div class="phone-notch" aria-hidden="true"></div>
-                    <img src="images/optimized/Plant4.webp" alt="Diagnosis history" class="phone-screen" loading="lazy" width="900" height="1948" />
-                  </div>
-                </div>
-                <div class="phone phone-front">
-                  <div class="phone-frame">
-                    <div class="phone-notch" aria-hidden="true"></div>
-                    <img src="images/optimized/MyPlants.webp" alt="My Plants collection" class="phone-screen" loading="lazy" width="900" height="1948" />
-                  </div>
-                </div>
+                <div class="phone phone-back phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                  <img src="images/optimized/Plant4.webp" alt="History" class="phone-screen" loading="lazy" />
+                </div></div>
+                <div class="phone phone-front phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                  <img src="images/optimized/MyPlants.webp" alt="My Plants" class="phone-screen" loading="lazy" />
+                </div></div>
               </div>
             </article>
           </div>
 
           <div class="flex items-center justify-between gap-4 mt-10 pt-6 border-t border-forest/10">
-            <button type="button" class="btn-ghost !py-2.5 !px-4 !text-sm" data-walk-prev aria-label="Previous step">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              Back
-            </button>
+            <button type="button" class="btn-ghost !py-2.5 !px-4 !text-sm" data-walk-prev>Back</button>
             <div class="flex gap-1.5" aria-hidden="true">
               <span data-pip class="w-2 h-2 rounded-full bg-sage scale-125 transition"></span>
               <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
               <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
               <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
             </div>
-            <button type="button" class="btn-primary !py-2.5 !px-4 !text-sm" data-walk-next aria-label="Next step">
-              Next
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
+            <button type="button" class="btn-primary !py-2.5 !px-4 !text-sm" data-walk-next>Next</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="relative z-10 py-20 sm:py-28">
+    <!-- How it works — Android -->
+    <section class="relative z-10 py-20 sm:py-28 bg-gradient-to-b from-transparent via-sage-soft/50 to-transparent" data-platform-panel="android" hidden>
       <div class="max-w-6xl mx-auto px-4">
-        <header class="text-center max-w-xl mx-auto mb-14 reveal">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Features</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">Everything a plant parent<br />quietly wishes for</h2>
-          <p class="text-forest/70 leading-relaxed">Beautiful screens. Clear answers. No overwhelm — just the care your plants need.</p>
+        <header class="text-center max-w-xl mx-auto mb-12 reveal">
+          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">How it works · Android</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">From permission<br />to plant companion</h2>
+          <p class="text-forest/70 leading-relaxed">The Android testing build — Snap, AI Botanist, Encyclopedia, and your collection.</p>
         </header>
 
+        <div class="max-w-4xl mx-auto" data-walkthrough>
+          <div class="grid grid-cols-4 gap-1.5 p-1 mb-10 bg-white rounded-2xl border border-forest/10 shadow-sm" role="tablist" aria-label="Android walkthrough steps">
+            <button type="button" class="walk-tab is-active flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="true" data-step="0">
+              <span class="text-[0.65rem] font-bold tracking-wide opacity-75">01</span>
+              <span class="text-xs sm:text-sm font-semibold">Allow</span>
+            </button>
+            <button type="button" class="walk-tab flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="false" data-step="1">
+              <span class="text-[0.65rem] font-bold tracking-wide opacity-75">02</span>
+              <span class="text-xs sm:text-sm font-semibold">Snap</span>
+            </button>
+            <button type="button" class="walk-tab flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="false" data-step="2">
+              <span class="text-[0.65rem] font-bold tracking-wide opacity-75">03</span>
+              <span class="text-xs sm:text-sm font-semibold">Ask AI</span>
+            </button>
+            <button type="button" class="walk-tab flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="false" data-step="3">
+              <span class="text-[0.65rem] font-bold tracking-wide opacity-75">04</span>
+              <span class="text-xs sm:text-sm font-semibold">Collect</span>
+            </button>
+          </div>
+
+          <div data-walk-stage class="min-h-[420px]">
+            <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="0" role="tabpanel">
+              <div>
+                <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 01</span>
+                <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Grant camera access</h3>
+                <p class="text-forest/70 leading-relaxed mb-5">Android asks for camera permission so you can snap plants. One tap to allow — then you’re ready to identify.</p>
+                <ul class="space-y-2.5 text-sm font-medium text-forest/70">
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>In-app permission prompt</li>
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>System camera dialog</li>
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Free daily IDs shown in the header</li>
+                </ul>
+              </div>
+              <div class="walk-stack w-full max-w-sm mx-auto">
+                <div class="phone phone-back phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                  <img src="images/android/optimized/permission2.webp" alt="Android camera system permission" class="phone-screen" loading="lazy" />
+                </div></div>
+                <div class="phone phone-front phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                  <img src="images/android/optimized/permission.webp" alt="Android grant camera permission" class="phone-screen" loading="lazy" />
+                </div></div>
+              </div>
+            </article>
+
+            <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="1" role="tabpanel" hidden>
+              <div>
+                <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 02</span>
+                <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Snap to identify</h3>
+                <p class="text-forest/70 leading-relaxed mb-5">Open the live camera, frame your plant, and tap the shutter. Instant identification starts here.</p>
+                <ul class="space-y-2.5 text-sm font-medium text-forest/70">
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Live camera viewfinder</li>
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>One-tap capture button</li>
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Bottom nav: Snap · Plants · AI · more</li>
+                </ul>
+              </div>
+              <div class="flex justify-center">
+                <div class="phone phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                  <img src="images/android/optimized/scan.webp" alt="Android snap camera screen" class="phone-screen" loading="lazy" />
+                </div></div>
+              </div>
+            </article>
+
+            <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="2" role="tabpanel" hidden>
+              <div>
+                <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 03</span>
+                <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Ask the AI Botanist</h3>
+                <p class="text-forest/70 leading-relaxed mb-5">Chat about care, toxicity, pests, or ID tips — or browse the Plant Encyclopedia with toxicity alerts.</p>
+                <ul class="space-y-2.5 text-sm font-medium text-forest/70">
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Conversational plant help</li>
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Encyclopedia with pet toxicity flags</li>
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Search by name or family</li>
+                </ul>
+              </div>
+              <div class="walk-stack w-full max-w-sm mx-auto">
+                <div class="phone phone-back phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                  <img src="images/android/optimized/plant1.webp" alt="Plant Encyclopedia" class="phone-screen" loading="lazy" />
+                </div></div>
+                <div class="phone phone-front phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                  <img src="images/android/optimized/aibotanist.webp" alt="AI Botanist chat" class="phone-screen" loading="lazy" />
+                </div></div>
+              </div>
+            </article>
+
+            <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="3" role="tabpanel" hidden>
+              <div>
+                <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 04</span>
+                <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Build your collection</h3>
+                <p class="text-forest/70 leading-relaxed mb-5">Save plants to My Plants and manage the experience in Settings — designed for 1:1 feature parity with iOS.</p>
+                <ul class="space-y-2.5 text-sm font-medium text-forest/70">
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>My Plants collection</li>
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Care guides &amp; toxic alerts</li>
+                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Settings &amp; about the build</li>
+                </ul>
+              </div>
+              <div class="walk-stack w-full max-w-sm mx-auto">
+                <div class="phone phone-back phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                  <img src="images/android/optimized/settings.webp" alt="Android settings" class="phone-screen" loading="lazy" />
+                </div></div>
+                <div class="phone phone-front phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                  <img src="images/android/optimized/myplants.webp" alt="Android My Plants" class="phone-screen" loading="lazy" />
+                </div></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="flex items-center justify-between gap-4 mt-10 pt-6 border-t border-forest/10">
+            <button type="button" class="btn-ghost !py-2.5 !px-4 !text-sm" data-walk-prev>Back</button>
+            <div class="flex gap-1.5" aria-hidden="true">
+              <span data-pip class="w-2 h-2 rounded-full bg-sage scale-125 transition"></span>
+              <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
+              <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
+              <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
+            </div>
+            <button type="button" class="btn-primary !py-2.5 !px-4 !text-sm" data-walk-next>Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="features" class="scroll-anchor" aria-hidden="true"></div>
+    <!-- Features iOS -->
+    <section class="relative z-10 py-20 sm:py-28" data-platform-panel="ios">
+      <div class="max-w-6xl mx-auto px-4">
+        <header class="text-center max-w-xl mx-auto mb-14 reveal">
+          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Features · iOS</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">Everything a plant parent<br />quietly wishes for</h2>
+          <p class="text-forest/70 leading-relaxed">Beautiful screens. Clear answers. No overwhelm.</p>
+        </header>
         <div class="grid md:grid-cols-3 gap-6 mb-12">
           <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal">
             <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
-              <div class="phone phone-sm translate-y-6">
-                <div class="phone-frame">
-                  <div class="phone-notch" aria-hidden="true"></div>
-                  <img src="images/optimized/Scan.webp" alt="" class="phone-screen" loading="lazy" width="900" height="1948" />
-                </div>
-              </div>
+              <div class="phone phone-sm translate-y-6 phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                <img src="images/optimized/Scan.webp" alt="" class="phone-screen" loading="lazy" />
+              </div></div>
             </div>
             <div class="p-6">
-              <div class="w-11 h-11 rounded-xl bg-sage-soft text-forest-mid flex items-center justify-center mb-3">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2v11z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="1.5"/></svg>
-              </div>
               <h3 class="font-display text-xl font-semibold text-forest mb-2">AI identification</h3>
-              <p class="text-sm text-forest/70 leading-relaxed">Snap a photo, pick a category (or not), and get a confident ID with common and scientific names.</p>
+              <p class="text-sm text-forest/70 leading-relaxed">Snap a photo, pick a category, and get a confident ID with common and scientific names.</p>
             </div>
           </article>
-
           <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal reveal-delay-1">
             <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
-              <div class="phone phone-sm translate-y-6">
-                <div class="phone-frame">
-                  <div class="phone-notch" aria-hidden="true"></div>
-                  <img src="images/optimized/Plant1.webp" alt="" class="phone-screen" loading="lazy" width="900" height="1948" />
-                </div>
-              </div>
+              <div class="phone phone-sm translate-y-6 phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                <img src="images/optimized/Plant1.webp" alt="" class="phone-screen" loading="lazy" />
+              </div></div>
             </div>
             <div class="p-6">
-              <div class="w-11 h-11 rounded-xl bg-sage-soft text-forest-mid flex items-center justify-center mb-3">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
-              </div>
               <h3 class="font-display text-xl font-semibold text-forest mb-2">Care that goes deep</h3>
-              <p class="text-sm text-forest/70 leading-relaxed">Light, water, soil, humidity, pests, toxicity, symptoms, and recovery advice — all in one diagnosis.</p>
+              <p class="text-sm text-forest/70 leading-relaxed">Light, water, soil, humidity, pests, toxicity, symptoms, and recovery advice.</p>
             </div>
           </article>
-
           <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal reveal-delay-2">
             <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
-              <div class="phone phone-sm translate-y-6">
-                <div class="phone-frame">
-                  <div class="phone-notch" aria-hidden="true"></div>
-                  <img src="images/optimized/MyPlants.webp" alt="" class="phone-screen" loading="lazy" width="900" height="1948" />
-                </div>
-              </div>
+              <div class="phone phone-sm translate-y-6 phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+                <img src="images/optimized/MyPlants.webp" alt="" class="phone-screen" loading="lazy" />
+              </div></div>
             </div>
             <div class="p-6">
-              <div class="w-11 h-11 rounded-xl bg-sage-soft text-forest-mid flex items-center justify-center mb-3">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c-2 4-6 6-6 10a6 6 0 0012 0c0-4-4-6-6-10z" stroke="currentColor" stroke-width="1.5"/><path d="M12 21v-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              </div>
               <h3 class="font-display text-xl font-semibold text-forest mb-2">Your living collection</h3>
-              <p class="text-sm text-forest/70 leading-relaxed">Search, wishlist, diagnosis history, and CSV export — keep every plant organized and portable.</p>
+              <p class="text-sm text-forest/70 leading-relaxed">Search, wishlist, diagnosis history, and CSV export — keep every plant organized.</p>
             </div>
           </article>
         </div>
-
-        <!-- Settings strip -->
         <div class="grid md:grid-cols-2 gap-10 items-center p-8 sm:p-12 bg-white rounded-[2rem] border border-forest/10 shadow-md reveal">
           <div>
-            <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Built for real plant people</p>
+            <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">iOS testing build</p>
             <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mb-4 leading-tight">Private by design. Portable when you need it.</h3>
-            <p class="text-forest/70 leading-relaxed mb-5">Bring your own AI key, export your collection as CSV, and keep control of your data. Educational guidance — always double-check critical advice.</p>
+            <p class="text-forest/70 leading-relaxed mb-5">Bring your own AI key, export your collection, and keep control of your data.</p>
             <ul class="space-y-3 text-sm font-medium text-forest/70">
               <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-sage-soft flex items-center justify-center text-forest-mid text-xs">✓</span> OpenRouter API key support</li>
               <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-sage-soft flex items-center justify-center text-forest-mid text-xs">✓</span> Import &amp; export collection</li>
@@ -369,58 +486,163 @@
             </ul>
           </div>
           <div class="flex justify-center">
-            <div class="phone">
-              <div class="phone-frame">
-                <div class="phone-notch" aria-hidden="true"></div>
-                <img src="images/optimized/Settings.webp" alt="Snap Plants settings" class="phone-screen" loading="lazy" width="900" height="1948" />
-              </div>
-            </div>
+            <div class="phone phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
+              <img src="images/optimized/Settings.webp" alt="iOS settings" class="phone-screen" loading="lazy" />
+            </div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="relative z-10 py-20 sm:py-28 bg-gradient-to-b from-transparent via-cream-deep to-transparent">
+    <!-- Features Android -->
+    <section class="relative z-10 py-20 sm:py-28" data-platform-panel="android" hidden>
+      <div class="max-w-6xl mx-auto px-4">
+        <header class="text-center max-w-xl mx-auto mb-14 reveal">
+          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Features · Android</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">Feature parity,<br />Material-calm UI</h2>
+          <p class="text-forest/70 leading-relaxed">Snap, collect, chat with AI Botanist, and browse the encyclopedia — in testing now.</p>
+        </header>
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal">
+            <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
+              <div class="phone phone-sm translate-y-6 phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                <img src="images/android/optimized/scan.webp" alt="" class="phone-screen" loading="lazy" />
+              </div></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-semibold text-forest mb-2">Camera snap ID</h3>
+              <p class="text-sm text-forest/70 leading-relaxed">Live viewfinder with a clear shutter — identify plants in one tap. Free daily IDs shown up top.</p>
+            </div>
+          </article>
+          <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal reveal-delay-1">
+            <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
+              <div class="phone phone-sm translate-y-6 phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                <img src="images/android/optimized/aibotanist.webp" alt="" class="phone-screen" loading="lazy" />
+              </div></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-semibold text-forest mb-2">AI Botanist chat</h3>
+              <p class="text-sm text-forest/70 leading-relaxed">Ask about watering, toxicity, pests, or plant ID tips — a calm chat companion for plant care.</p>
+            </div>
+          </article>
+          <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal reveal-delay-2">
+            <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
+              <div class="phone phone-sm translate-y-6 phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+                <img src="images/android/optimized/plant1.webp" alt="" class="phone-screen" loading="lazy" />
+              </div></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-semibold text-forest mb-2">Plant Encyclopedia</h3>
+              <p class="text-sm text-forest/70 leading-relaxed">Browse common houseplants with scientific names, care blurbs, and pet toxicity warnings.</p>
+            </div>
+          </article>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 items-center p-8 sm:p-12 bg-white rounded-[2rem] border border-forest/10 shadow-md reveal">
+          <div>
+            <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Android testing build</p>
+            <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mb-4 leading-tight">1:1 baseline with iOS — growing fast</h3>
+            <p class="text-forest/70 leading-relaxed mb-5">Camera ID, disease notes, toxic alerts, care guides, AI chat, personal collection, and encyclopedia search.</p>
+            <ul class="space-y-3 text-sm font-medium text-forest/70">
+              <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-sage-soft flex items-center justify-center text-forest-mid text-xs">✓</span> Snap + My Plants + AI Botanist</li>
+              <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-sage-soft flex items-center justify-center text-forest-mid text-xs">✓</span> Encyclopedia with toxicity flags</li>
+              <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-sage-soft flex items-center justify-center text-forest-mid text-xs">✓</span> In active testing — send feedback</li>
+            </ul>
+          </div>
+          <div class="flex justify-center">
+            <div class="phone phone--android"><div class="phone-frame phone-frame--android"><div class="phone-punch" aria-hidden="true"></div>
+              <img src="images/android/optimized/settings.webp" alt="Android settings" class="phone-screen" loading="lazy" />
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="gallery" class="scroll-anchor" aria-hidden="true"></div>
+    <!-- Gallery iOS -->
+    <section class="relative z-10 py-20 sm:py-28 bg-gradient-to-b from-transparent via-cream-deep to-transparent" data-platform-panel="ios">
       <div class="max-w-6xl mx-auto px-4">
         <header class="text-center max-w-xl mx-auto mb-12 reveal">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Inside the app</p>
+          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Inside the app · iOS</p>
           <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">Meet the experience</h2>
-          <p class="text-forest/70 leading-relaxed">Real screens from Snap Plants — from first snap to diagnosis history.</p>
+          <p class="text-forest/70 leading-relaxed">Real iOS screens from Snap Plants.</p>
         </header>
-
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Scan.webp" data-caption="Snap — choose a plant category">
-            <img src="images/optimized/Scan.webp" alt="Snap screen" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="absolute left-2 bottom-2 px-2.5 py-1 rounded-full bg-white/90 text-xs font-semibold text-forest border border-forest/10">Snap</span>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Scan.webp" data-caption="iOS Snap — choose a category">
+            <img src="images/optimized/Scan.webp" alt="Snap" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Snap</span>
           </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] sm:row-span-2 sm:aspect-auto sm:min-h-full rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant1.webp" data-caption="Diagnosis — Snake Plant, 95% confidence">
-            <img src="images/optimized/Plant1.webp" alt="Plant diagnosis" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="absolute left-2 bottom-2 px-2.5 py-1 rounded-full bg-white/90 text-xs font-semibold text-forest border border-forest/10">Identify</span>
+          <button type="button" class="gallery-item relative aspect-[9/16] sm:row-span-2 sm:aspect-auto sm:min-h-full rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant1.webp" data-caption="iOS Diagnosis — Snake Plant">
+            <img src="images/optimized/Plant1.webp" alt="Identify" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Identify</span>
           </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant2.webp" data-caption="Care details — symptoms &amp; advice">
-            <img src="images/optimized/Plant2.webp" alt="Care advice" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="absolute left-2 bottom-2 px-2.5 py-1 rounded-full bg-white/90 text-xs font-semibold text-forest border border-forest/10">Care</span>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant2.webp" data-caption="iOS Care details">
+            <img src="images/optimized/Plant2.webp" alt="Care" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Care</span>
           </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant3.webp" data-caption="Toxicity notes &amp; resources">
-            <img src="images/optimized/Plant3.webp" alt="Toxicity and resources" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="absolute left-2 bottom-2 px-2.5 py-1 rounded-full bg-white/90 text-xs font-semibold text-forest border border-forest/10">Safety</span>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant3.webp" data-caption="iOS Toxicity &amp; resources">
+            <img src="images/optimized/Plant3.webp" alt="Safety" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Safety</span>
           </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/MyPlants.webp" data-caption="My Plants collection">
-            <img src="images/optimized/MyPlants.webp" alt="My Plants" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="absolute left-2 bottom-2 px-2.5 py-1 rounded-full bg-white/90 text-xs font-semibold text-forest border border-forest/10">Collection</span>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/MyPlants.webp" data-caption="iOS My Plants">
+            <img src="images/optimized/MyPlants.webp" alt="Collection" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Collection</span>
           </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant4.webp" data-caption="Diagnosis history timeline">
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant4.webp" data-caption="iOS Diagnosis history">
             <img src="images/optimized/Plant4.webp" alt="History" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="absolute left-2 bottom-2 px-2.5 py-1 rounded-full bg-white/90 text-xs font-semibold text-forest border border-forest/10">History</span>
+            <span class="gallery-cap">History</span>
           </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Settings.webp" data-caption="Settings — keys, export, about">
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Settings.webp" data-caption="iOS Settings">
             <img src="images/optimized/Settings.webp" alt="Settings" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="absolute left-2 bottom-2 px-2.5 py-1 rounded-full bg-white/90 text-xs font-semibold text-forest border border-forest/10">Settings</span>
+            <span class="gallery-cap">Settings</span>
           </button>
           <div class="relative aspect-[9/16] rounded-2xl overflow-hidden border border-forest/10 shadow-sm flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-sage-soft to-cream-deep" aria-hidden="true">
             <img src="images/optimized/Icon.webp" alt="" class="w-[56%] rounded-[22%] shadow-lg" loading="lazy" />
-            <span class="px-2.5 py-1 rounded-full bg-white/90 text-xs font-semibold text-forest border border-forest/10">Snap Plants</span>
+            <span class="gallery-cap !static">Snap Plants</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Android -->
+    <section class="relative z-10 py-20 sm:py-28 bg-gradient-to-b from-transparent via-cream-deep to-transparent" data-platform-panel="android" hidden>
+      <div class="max-w-6xl mx-auto px-4">
+        <header class="text-center max-w-xl mx-auto mb-12 reveal">
+          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Inside the app · Android</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">Meet the Android build</h2>
+          <p class="text-forest/70 leading-relaxed">Real screenshots from the Android testing app.</p>
+        </header>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/android/optimized/scan.webp" data-caption="Android Snap — camera identify">
+            <img src="images/android/optimized/scan.webp" alt="Snap" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Snap</span>
+          </button>
+          <button type="button" class="gallery-item relative aspect-[9/16] sm:row-span-2 sm:aspect-auto sm:min-h-full rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/android/optimized/aibotanist.webp" data-caption="Android AI Botanist chat">
+            <img src="images/android/optimized/aibotanist.webp" alt="AI Botanist" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">AI Botanist</span>
+          </button>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/android/optimized/plant1.webp" data-caption="Android Plant Encyclopedia">
+            <img src="images/android/optimized/plant1.webp" alt="Encyclopedia" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Encyclopedia</span>
+          </button>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/android/optimized/myplants.webp" data-caption="Android My Plants">
+            <img src="images/android/optimized/myplants.webp" alt="My Plants" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">My Plants</span>
+          </button>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/android/optimized/permission.webp" data-caption="Android camera permission">
+            <img src="images/android/optimized/permission.webp" alt="Permission" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Permission</span>
+          </button>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/android/optimized/permission2.webp" data-caption="Android system camera dialog">
+            <img src="images/android/optimized/permission2.webp" alt="System permission" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">System dialog</span>
+          </button>
+          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/android/optimized/settings.webp" data-caption="Android Settings">
+            <img src="images/android/optimized/settings.webp" alt="Settings" class="w-full h-full object-cover object-top" loading="lazy" />
+            <span class="gallery-cap">Settings</span>
+          </button>
+          <div class="relative aspect-[9/16] rounded-2xl overflow-hidden border border-forest/10 shadow-sm flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-sage-soft to-cream-deep" aria-hidden="true">
+            <img src="images/android/optimized/icon.webp" alt="" class="w-[56%] rounded-[22%] shadow-lg" loading="lazy" />
+            <span class="gallery-cap !static">Android</span>
           </div>
         </div>
       </div>
@@ -430,25 +652,23 @@
     <section class="relative z-10 py-20 sm:py-28">
       <div class="max-w-6xl mx-auto px-4">
         <header class="text-center max-w-xl mx-auto mb-12 reveal">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Loved by plant parents</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight">Calm confidence<br />for every leaf</h2>
+          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">For plant parents</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight">Calm confidence<br />on every platform</h2>
         </header>
-
         <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-10 reveal">
           <div class="text-center p-5 sm:p-6 bg-white rounded-2xl border border-forest/10 shadow-sm">
-            <span class="font-display text-xl sm:text-2xl font-semibold text-forest block mb-1">Snap</span>
-            <span class="text-xs sm:text-sm text-muted font-medium">Instant plant ID</span>
+            <span class="font-display text-xl sm:text-2xl font-semibold text-forest block mb-1">iOS</span>
+            <span class="text-xs sm:text-sm text-muted font-medium">In testing</span>
           </div>
           <div class="text-center p-5 sm:p-6 bg-white rounded-2xl border border-forest/10 shadow-sm">
-            <span class="font-display text-xl sm:text-2xl font-semibold text-forest block mb-1">Care</span>
-            <span class="text-xs sm:text-sm text-muted font-medium">Light · water · soil</span>
+            <span class="font-display text-xl sm:text-2xl font-semibold text-forest block mb-1">Android</span>
+            <span class="text-xs sm:text-sm text-muted font-medium">In testing</span>
           </div>
           <div class="text-center p-5 sm:p-6 bg-white rounded-2xl border border-forest/10 shadow-sm">
-            <span class="font-display text-xl sm:text-2xl font-semibold text-forest block mb-1">Yours</span>
-            <span class="text-xs sm:text-sm text-muted font-medium">Living collection</span>
+            <span class="font-display text-xl sm:text-2xl font-semibold text-forest block mb-1">Feedback</span>
+            <span class="text-xs sm:text-sm text-muted font-medium">testing@…</span>
           </div>
         </div>
-
         <div class="grid md:grid-cols-3 gap-5">
           <blockquote class="card-breathe p-7 bg-white rounded-2xl border border-forest/10 shadow-sm flex flex-col gap-5 reveal">
             <p class="font-display text-lg italic leading-snug text-forest/90 flex-1">“Finally an ID app that doesn’t dump me into a wall of text. The care snapshot is exactly what I open first.”</p>
@@ -459,50 +679,57 @@
             <footer class="text-sm font-semibold text-muted">— Jordan, pet + plant parent</footer>
           </blockquote>
           <blockquote class="card-breathe p-7 bg-white rounded-2xl border border-forest/10 shadow-sm flex flex-col gap-5 reveal reveal-delay-2">
-            <p class="font-display text-lg italic leading-snug text-forest/90 flex-1">“Diagnosis history is underrated. I can see how my snake plant has been doing over time.”</p>
+            <p class="font-display text-lg italic leading-snug text-forest/90 flex-1">“Love that both iOS and Android are moving together — same calm product, different phone.”</p>
             <footer class="text-sm font-semibold text-muted">— Sam, balcony gardener</footer>
           </blockquote>
         </div>
-        <p class="text-center text-xs text-muted italic mt-6 reveal">Illustrative quotes for this preview site — replace with real voices at launch.</p>
+        <p class="text-center text-xs text-muted italic mt-6 reveal">Illustrative quotes for this preview site.</p>
       </div>
     </section>
 
-    <!-- Waitlist CTA -->
+    <!-- Feedback / waitlist CTA -->
     <section id="waitlist" class="relative z-10 py-16 sm:py-24">
       <div class="max-w-6xl mx-auto px-4">
         <div class="relative text-center px-6 py-12 sm:px-12 sm:py-16 rounded-[2rem] overflow-hidden text-cream shadow-xl reveal" style="background: linear-gradient(160deg, #1B4332 0%, #0d2818 100%);">
           <div class="absolute top-[-40%] right-[-15%] w-[55%] h-[80%] rounded-full bg-sage-bright/30 blur-3xl pointer-events-none" aria-hidden="true"></div>
           <img src="images/optimized/Icon.webp" alt="" width="64" height="64" class="relative z-10 w-16 h-16 rounded-2xl mx-auto mb-6 shadow-2xl" />
-          <h2 class="relative z-10 font-display text-3xl sm:text-4xl font-semibold leading-tight mb-3">Your plants deserve<br />better than a guess</h2>
-          <p class="relative z-10 text-cream/75 max-w-md mx-auto mb-8 leading-relaxed">Join the waitlist for early access on iOS. Android is on the path too.</p>
+          <div class="relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 text-gold-soft text-xs font-bold tracking-wide uppercase mb-4">
+            In testing · iOS &amp; Android
+          </div>
+          <h2 class="relative z-10 font-display text-3xl sm:text-4xl font-semibold leading-tight mb-3">Help us grow<br />Snap Plants</h2>
+          <p class="relative z-10 text-cream/75 max-w-md mx-auto mb-6 leading-relaxed">
+            Both platforms are in active testing. Share bugs, ideas, or join the launch list —
+            email us anytime at
+            <a href="mailto:testing@snapplants.com" class="text-gold-soft font-semibold underline underline-offset-2">testing@snapplants.com</a>.
+          </p>
 
           <form id="waitlistForm" class="relative z-10 flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4" novalidate>
             <label class="sr-only" for="waitlistEmail">Email address</label>
             <input type="email" id="waitlistEmail" name="email" required autocomplete="email" inputmode="email" placeholder="you@example.com"
               class="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/15 text-cream placeholder:text-cream/40 outline-none focus:border-gold focus:bg-white/15 transition" />
-            <button type="submit" class="btn-gold !py-3.5 whitespace-nowrap">Notify me for iOS</button>
+            <button type="submit" class="btn-gold !py-3.5 whitespace-nowrap">Notify me</button>
           </form>
           <p id="waitlistSuccess" class="form-success relative z-10 text-gold-soft font-semibold mb-4" hidden role="status">
-            You’re on the list. We’ll be in touch when Snap Plants blooms on iOS.
+            You’re on the list. For bugs &amp; feedback, write to testing@snapplants.com.
           </p>
-          <p class="relative z-10 text-xs text-cream/45 mb-6">No spam. Just launch news. Stored locally for this preview build.</p>
+          <p class="relative z-10 text-xs text-cream/45 mb-6">No spam. Waitlist is local-only in this preview. Prefer email: testing@snapplants.com</p>
           <div class="relative z-10 flex flex-wrap justify-center gap-2">
-            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Coming soon on the App Store</span>
-            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Android later</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">iOS testing</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Android testing</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">App Store &amp; Play soon</span>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="relative z-10 border-t border-forest/10 bg-cream-deep py-12">
     <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-6 text-center">
       <div class="flex items-center gap-3">
         <img src="images/optimized/Icon.webp" alt="" width="40" height="40" class="rounded-xl" />
         <div class="text-left">
           <strong class="font-display text-forest block">Snap Plants</strong>
-          <span class="text-xs text-muted">Identify plants. Care with confidence.</span>
+          <span class="text-xs text-muted">iOS &amp; Android · In testing</span>
         </div>
       </div>
       <nav class="flex flex-wrap justify-center gap-5 text-sm font-medium text-forest/70" aria-label="Footer">
@@ -514,14 +741,13 @@
       </nav>
       <p class="text-xs text-muted max-w-lg leading-relaxed">
         Snap Plants uses AI to identify plants and suggest care. Always double-check critical advice.
-        Educational information only — not a substitute for professional botanical advice.
+        Testing feedback: <a href="mailto:testing@snapplants.com" class="text-sage underline">testing@snapplants.com</a>
       </p>
-      <p class="text-xs text-muted">Coming soon on the App Store</p>
+      <p class="text-xs text-muted">In testing on iOS &amp; Android · Coming soon to the App Store &amp; Google Play</p>
       <p class="text-xs text-muted">&copy; <span data-year>2026</span> Snap Plants. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Lightbox -->
   <div id="lightbox" class="lightbox fixed inset-0 z-[200] bg-forest-deep/90 backdrop-blur-md flex items-center justify-center p-6" hidden role="dialog" aria-modal="true" aria-label="Image preview">
     <button type="button" id="lightboxClose" class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition" aria-label="Close">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
