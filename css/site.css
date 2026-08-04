@@ -129,6 +129,36 @@
   pointer-events: none;
 }
 
+/* ---- Beta request form ---- */
+.beta-platform {
+  cursor: pointer;
+  display: block;
+}
+
+.beta-platform__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(247, 244, 239, 0.85);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  text-align: center;
+}
+
+.beta-platform:hover .beta-platform__card {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+#beta {
+  scroll-margin-top: calc(var(--banner-h) + var(--nav-h) + 0.5rem);
+}
+
 html {
   scroll-behavior: smooth;
 }

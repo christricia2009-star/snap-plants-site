@@ -278,35 +278,111 @@
     }
   });
 
-  /* Waitlist form */
-  const waitlistForm = document.getElementById("waitlistForm");
-  if (waitlistForm) {
-    const email = document.getElementById("waitlistEmail");
-    const success = document.getElementById("waitlistSuccess");
-    const KEY = "snap-plants-waitlist";
+  /* Beta tester request form */
+  const betaForm = document.getElementById("betaForm");
+  if (betaForm) {
+    const success = document.getElementById("betaSuccess");
+    const again = document.getElementById("betaAgain");
+    const KEY = "snap-plants-beta";
+    const fields = {
+      name: betaForm.querySelector('[name="name"]'),
+      email: betaForm.querySelector('[name="email"]'),
+      device: betaForm.querySelector('[name="device"]'),
+      notes: betaForm.querySelector('[name="notes"]'),
+    };
 
-    waitlistForm.addEventListener("submit", (e) => {
+    function clearBetaErrors() {
+      betaForm.querySelectorAll(".beta-input, .beta-platform__card").forEach((el) => {
+        el.classList.remove("ring-2", "ring-red-400");
+      });
+    }
+
+    betaForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const val = (email && email.value.trim().toLowerCase()) || "";
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-        if (email) {
-          email.classList.add("ring-2", "ring-red-400");
-          email.focus();
-        }
-        return;
+      clearBetaErrors();
+
+      const name = (fields.name && fields.name.value.trim()) || "";
+      const email = (fields.email && fields.email.value.trim().toLowerCase()) || "";
+      const platformEl = betaForm.querySelector('input[name="platform"]:checked');
+      const platform = (platformEl && platformEl.value) || "";
+      const device = (fields.device && fields.device.value.trim()) || "";
+      const notes = (fields.notes && fields.notes.value.trim()) || "";
+
+      let ok = true;
+      if (!name) {
+        if (fields.name) fields.name.classList.add("ring-2", "ring-red-400");
+        ok = false;
       }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (fields.email) fields.email.classList.add("ring-2", "ring-red-400");
+        ok = false;
+      }
+      if (!platform) {
+        betaForm.querySelectorAll(".beta-platform__card").forEach((el) => {
+          el.classList.add("ring-2", "ring-red-400");
+        });
+        ok = false;
+      }
+      if (!ok) return;
+
+      const entry = {
+        name,
+        email,
+        platform,
+        device: device || null,
+        notes: notes || null,
+        at: new Date().toISOString(),
+      };
+
       try {
         const list = JSON.parse(localStorage.getItem(KEY) || "[]");
-        if (!list.includes(val)) {
-          list.push(val);
-          localStorage.setItem(KEY, JSON.stringify(list));
-        }
+        list.push(entry);
+        localStorage.setItem(KEY, JSON.stringify(list));
       } catch (_) {}
-      waitlistForm.style.display = "none";
-      if (success) success.hidden = false;
+
+      const subject = encodeURIComponent(`Snap Plants beta request — ${platform}`);
+      const body = encodeURIComponent(
+        [
+          "I'd like to join the Snap Plants beta.",
+          "",
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Platform: ${platform}`,
+          `Device: ${device || "(not provided)"}`,
+          "",
+          "Brief details:",
+          notes || "(none)",
+          "",
+          "— Sent from snapplants site",
+        ].join("\n")
+      );
+      window.location.href = `mailto:testing@snapplants.com?subject=${subject}&body=${body}`;
+
+      betaForm.style.display = "none";
+      if (success) {
+        success.hidden = false;
+        success.removeAttribute("hidden");
+      }
     });
-    if (email) {
-      email.addEventListener("input", () => email.classList.remove("ring-2", "ring-red-400"));
+
+    betaForm.querySelectorAll(".beta-input").forEach((el) => {
+      el.addEventListener("input", () => el.classList.remove("ring-2", "ring-red-400"));
+    });
+    betaForm.querySelectorAll('input[name="platform"]').forEach((el) => {
+      el.addEventListener("change", clearBetaErrors);
+    });
+
+    if (again) {
+      again.addEventListener("click", () => {
+        if (success) {
+          success.hidden = true;
+          success.setAttribute("hidden", "");
+        }
+        betaForm.style.display = "";
+        betaForm.reset();
+        const both = betaForm.querySelector('input[name="platform"][value="Both"]');
+        if (both) both.checked = true;
+      });
     }
   }
 

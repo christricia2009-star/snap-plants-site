@@ -88,7 +88,7 @@
         <a href="#gallery" class="nav-link hover:text-forest">Gallery</a>
         <a href="support/" class="nav-link hover:text-forest">Support</a>
       </nav>
-      <a href="#waitlist" class="btn-primary !py-2.5 !px-4 !text-sm hidden md:inline-flex">Send feedback</a>
+      <a href="#beta" class="btn-primary !py-2.5 !px-4 !text-sm hidden md:inline-flex">Join beta</a>
       <button type="button" id="menuToggle" class="lg:hidden z-10 w-11 h-11 flex flex-col items-center justify-center gap-1.5" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span class="block w-5 h-0.5 bg-forest rounded"></span>
         <span class="block w-5 h-0.5 bg-forest rounded"></span>
@@ -100,7 +100,7 @@
       <a href="#features">Features</a>
       <a href="#gallery">Gallery</a>
       <a href="support/">Support</a>
-      <a href="#waitlist" class="btn-primary mt-2">Send feedback</a>
+      <a href="#beta" class="btn-primary mt-2">Join beta</a>
     </div>
   </header>
 
@@ -671,36 +671,90 @@
       </div>
     </section>
 
-    <!-- Feedback / waitlist CTA -->
-    <section id="waitlist" class="relative z-10 py-16 sm:py-24">
+    <!-- Beta tester request -->
+    <section id="beta" class="relative z-10 py-16 sm:py-24">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="relative text-center px-6 py-12 sm:px-12 sm:py-16 rounded-[2rem] overflow-hidden text-cream shadow-xl reveal" style="background: linear-gradient(160deg, #1B4332 0%, #0d2818 100%);">
+        <div class="relative px-6 py-12 sm:px-10 sm:py-14 rounded-[2rem] overflow-hidden text-cream shadow-xl reveal" style="background: linear-gradient(160deg, #1B4332 0%, #0d2818 100%);">
           <div class="absolute top-[-40%] right-[-15%] w-[55%] h-[80%] rounded-full bg-sage-bright/30 blur-3xl pointer-events-none" aria-hidden="true"></div>
-          <img src="images/optimized/Icon.webp" alt="" width="64" height="64" class="relative z-10 w-16 h-16 rounded-2xl mx-auto mb-6 shadow-2xl" />
-          <div class="relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 text-gold-soft text-xs font-bold tracking-wide uppercase mb-4">
-            In testing · iOS &amp; Android
-          </div>
-          <h2 class="relative z-10 font-display text-3xl sm:text-4xl font-semibold leading-tight mb-3">Help us grow<br />Snap Plants</h2>
-          <p class="relative z-10 text-cream/75 max-w-md mx-auto mb-6 leading-relaxed">
-            Both platforms are in active testing. Share bugs, ideas, or join the launch list —
-            email us anytime at
-            <a href="mailto:testing@snapplants.com" class="text-gold-soft font-semibold underline underline-offset-2">testing@snapplants.com</a>.
-          </p>
 
-          <form id="waitlistForm" class="relative z-10 flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4" novalidate>
-            <label class="sr-only" for="waitlistEmail">Email address</label>
-            <input type="email" id="waitlistEmail" name="email" required autocomplete="email" inputmode="email" placeholder="you@example.com"
-              class="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/15 text-cream placeholder:text-cream/40 outline-none focus:border-gold focus:bg-white/15 transition" />
-            <button type="submit" class="btn-gold !py-3.5 whitespace-nowrap">Notify me</button>
+          <div class="relative z-10 max-w-xl mx-auto text-center mb-8">
+            <img src="images/optimized/Icon.webp" alt="" width="56" height="56" class="w-14 h-14 rounded-2xl mx-auto mb-5 shadow-2xl" />
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 text-gold-soft text-xs font-bold tracking-wide uppercase mb-4">
+              Closed beta · iOS &amp; Android
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-semibold leading-tight mb-3">Request beta access</h2>
+            <p class="text-cream/75 leading-relaxed">
+              Try Snap Plants before public launch. Pick iOS, Android, or both —
+              we’ll follow up at <a href="mailto:testing@snapplants.com" class="text-gold-soft font-semibold underline underline-offset-2">testing@snapplants.com</a>.
+            </p>
+          </div>
+
+          <form id="betaForm" class="beta-form relative z-10 max-w-lg mx-auto text-left space-y-4" novalidate>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="betaName" class="block text-xs font-semibold tracking-wide uppercase text-cream/60 mb-1.5">Name</label>
+                <input type="text" id="betaName" name="name" required autocomplete="name" placeholder="Your name"
+                  class="beta-input w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-cream placeholder:text-cream/35 outline-none focus:border-gold focus:bg-white/15 transition" />
+              </div>
+              <div>
+                <label for="betaEmail" class="block text-xs font-semibold tracking-wide uppercase text-cream/60 mb-1.5">Email</label>
+                <input type="email" id="betaEmail" name="email" required autocomplete="email" inputmode="email" placeholder="you@example.com"
+                  class="beta-input w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-cream placeholder:text-cream/35 outline-none focus:border-gold focus:bg-white/15 transition" />
+              </div>
+            </div>
+
+            <fieldset>
+              <legend class="block text-xs font-semibold tracking-wide uppercase text-cream/60 mb-2">Platform</legend>
+              <div class="grid grid-cols-3 gap-2" role="group" aria-label="Platform preference">
+                <label class="beta-platform">
+                  <input type="radio" name="platform" value="iOS" required class="sr-only peer" />
+                  <span class="beta-platform__card peer-checked:bg-white/20 peer-checked:border-gold peer-checked:text-cream">iOS</span>
+                </label>
+                <label class="beta-platform">
+                  <input type="radio" name="platform" value="Android" class="sr-only peer" />
+                  <span class="beta-platform__card peer-checked:bg-white/20 peer-checked:border-gold peer-checked:text-cream">Android</span>
+                </label>
+                <label class="beta-platform">
+                  <input type="radio" name="platform" value="Both" class="sr-only peer" checked />
+                  <span class="beta-platform__card peer-checked:bg-white/20 peer-checked:border-gold peer-checked:text-cream">Both</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div>
+              <label for="betaDevice" class="block text-xs font-semibold tracking-wide uppercase text-cream/60 mb-1.5">Device <span class="normal-case font-normal text-cream/40">(optional)</span></label>
+              <input type="text" id="betaDevice" name="device" autocomplete="off" placeholder="e.g. iPhone 15, Pixel 8"
+                class="beta-input w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-cream placeholder:text-cream/35 outline-none focus:border-gold focus:bg-white/15 transition" />
+            </div>
+
+            <div>
+              <label for="betaNotes" class="block text-xs font-semibold tracking-wide uppercase text-cream/60 mb-1.5">Brief details <span class="normal-case font-normal text-cream/40">(optional)</span></label>
+              <textarea id="betaNotes" name="notes" rows="3" maxlength="500" placeholder="Plant collection size, what you want to test, TestFlight / Play email if different…"
+                class="beta-input w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-cream placeholder:text-cream/35 outline-none focus:border-gold focus:bg-white/15 transition resize-y min-h-[5rem]"></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold w-full !py-3.5 !text-base">
+              Request beta access
+            </button>
+            <p class="text-center text-xs text-cream/45 leading-relaxed">
+              Submitting opens an email to <strong class="text-cream/70">testing@snapplants.com</strong> with your details (and saves a local copy on this device).
+            </p>
           </form>
-          <p id="waitlistSuccess" class="form-success relative z-10 text-gold-soft font-semibold mb-4" hidden role="status">
-            You’re on the list. For bugs &amp; feedback, write to testing@snapplants.com.
-          </p>
-          <p class="relative z-10 text-xs text-cream/45 mb-6">No spam. Waitlist is local-only in this preview. Prefer email: testing@snapplants.com</p>
-          <div class="relative z-10 flex flex-wrap justify-center gap-2">
-            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">iOS testing</span>
-            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Android testing</span>
-            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">App Store &amp; Play soon</span>
+
+          <div id="betaSuccess" class="form-success relative z-10 max-w-lg mx-auto text-center mt-6" hidden role="status">
+            <p class="text-gold-soft font-semibold text-lg mb-2">Request ready</p>
+            <p class="text-cream/75 text-sm leading-relaxed mb-4">
+              If your email app opened, send the message to complete your request.
+              You can also write us anytime at
+              <a href="mailto:testing@snapplants.com" class="text-gold-soft font-semibold underline">testing@snapplants.com</a>.
+            </p>
+            <button type="button" id="betaAgain" class="btn-ghost !border-white/25 !text-cream/90 !py-2.5 !px-4 !text-sm">Submit another</button>
+          </div>
+
+          <div class="relative z-10 flex flex-wrap justify-center gap-2 mt-8">
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">iOS TestFlight</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Android closed testing</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Limited spots</span>
           </div>
         </div>
       </div>
