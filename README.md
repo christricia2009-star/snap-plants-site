@@ -5,7 +5,7 @@ Premium static website for **Snap Plants**, an AI plant identification & care ap
 Stack: HTML + Tailwind CSS (CDN) + minimal vanilla JS. No build step, no npm install.
 
 **Platforms:** iOS + Android (both in testing). Toggle via the segmented control in the nav.  
-**Feedback:** [testing@snapplants.com](mailto:testing@snapplants.com)
+**Feedback:** [admin@snapcollectibles.com](mailto:admin@snapcollectibles.com)
 
 ## Pages
 

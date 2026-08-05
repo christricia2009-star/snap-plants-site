@@ -356,7 +356,7 @@
           "— Sent from snapplants site",
         ].join("\n")
       );
-      window.location.href = `mailto:testing@snapplants.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:admin@snapcollectibles.com?subject=${subject}&body=${body}`;
 
       betaForm.style.display = "none";
       if (success) {
