@@ -43,7 +43,7 @@
         <a href="../#features" class="nav-link hover:text-forest">Features</a>
         <a href="../support/" class="nav-link hover:text-forest">Support</a>
       </nav>
-      <a href="../#beta" class="btn-primary !py-2.5 !px-4 !text-sm hidden md:inline-flex">Join beta</a>
+      <a href="../#download" class="btn-primary !py-2.5 !px-4 !text-sm hidden md:inline-flex">Get the app</a>
       <button type="button" id="menuToggle" class="md:hidden z-10 w-11 h-11 flex flex-col items-center justify-center gap-1.5" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span class="block w-5 h-0.5 bg-forest rounded"></span>
         <span class="block w-5 h-0.5 bg-forest rounded"></span>
@@ -54,7 +54,7 @@
       <a href="../">Home</a>
       <a href="../support/">Support</a>
       <a href="../terms/">Terms</a>
-      <a href="../#beta" class="btn-primary mt-2">Join beta</a>
+      <a href="../#download" class="btn-primary mt-2">Get the app</a>
     </div>
   </header>
 
@@ -62,7 +62,7 @@
     <div class="max-w-3xl mx-auto px-4">
       <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Legal</p>
       <h1 class="font-display text-4xl font-semibold text-forest mb-3">Privacy Policy</h1>
-      <p class="text-sm text-muted mb-10">Effective date: August 3, 2026 · Last updated: August 3, 2026</p>
+      <p class="text-sm text-muted mb-10">Effective date: August 3, 2026 · Last updated: August 7, 2026</p>
 
       <div class="prose-legal">
         <p>
@@ -74,7 +74,8 @@
 
         <h2>1. Who we are</h2>
         <p>
-          Snap Plants is a consumer plant identification and care application. For privacy questions, contact us at
+          Snap Plants is an iOS app for identifying plants, tracking a personal plant collection, and optionally
+          trading plants with other users. For privacy questions, contact us at
           <a href="mailto:admin@snapcollectibles.com">admin@snapcollectibles.com</a>.
         </p>
 
@@ -82,24 +83,24 @@
         <p>Depending on how you use the Service, we may process the following categories of information:</p>
         <h3>Information you provide</h3>
         <ul>
-          <li><strong>Contact details</strong> — such as your email address if you join a waitlist, contact support, or create an account.</li>
-          <li><strong>Plant collection data</strong> — names, notes, diagnosis history, wishlist or selling labels, and related metadata you save in the app.</li>
-          <li><strong>API credentials you enter</strong> — if you provide a third-party API key (for example, an OpenRouter key), it is stored on your device for your use of AI features. We do not sell these keys.</li>
+          <li><strong>Account information</strong> — when you Sign in with Apple, we receive the identity information Apple provides (such as a user identifier and, if you choose to share it, your name or email).</li>
+          <li><strong>Plant collection data</strong> — plant names, photos, notes, location tags, wishlist items, and related metadata you save in the app.</li>
+          <li><strong>Trade and contact details</strong> — trade posts, in-app messages, and optional contact helpers you provide (such as a username or Facebook-related helpers) so other users can reach you for peer-to-peer trades.</li>
           <li><strong>Support messages</strong> — content you send when contacting us for help.</li>
         </ul>
         <h3>Information collected automatically</h3>
         <ul>
           <li><strong>Device and app information</strong> — device type, OS version, app version, language, and basic performance or crash diagnostics (if enabled).</li>
-          <li><strong>Usage data</strong> — approximate feature usage (for example, that identification was used), not the full content of every screen you view, unless needed for diagnostics you opt into.</li>
+          <li><strong>Usage data</strong> — approximate feature usage (for example, that identification or trades were used), not the full content of every screen you view, unless needed for diagnostics you opt into.</li>
         </ul>
 
         <h2>3. Camera and photo usage</h2>
         <p>
-          Snap Plants needs camera and/or photo library access to identify plants. Here’s how we treat that:
+          Snap Plants needs camera and/or photo library access for plant identification and collection photos. Here’s how we treat that:
         </p>
         <ul>
-          <li>Photos you take or select are used to generate plant identification and care guidance.</li>
-          <li>Images may be sent to AI model providers you configure (or that we use to power identification) solely to return identification and care results.</li>
+          <li>Photos you take or select are used to generate plant identification and care context, and to display plants in your collection and My Shelf views.</li>
+          <li>Images may be processed by services that power identification solely to return identification and related results.</li>
           <li>We do not use your plant photos for advertising, and we do not sell your photos.</li>
           <li>You can deny camera or photo access in system settings; some features will not work without them.</li>
           <li>Photos saved to your collection remain under your control and can be removed by deleting the entry or clearing app data.</li>
@@ -107,70 +108,79 @@
 
         <h2>4. Plant identification data</h2>
         <p>
-          When you identify a plant, the Service may process the image and any category you select to return:
-          a suggested common and scientific name, confidence score, care snapshot, symptoms, toxicity notes, and related resources.
+          When you identify a plant, the Service may process the image and any category you select (for example indoor vs outdoor types) to return
+          assistive identification results, related care context when available, and helpful lookup links to plant databases or references.
         </p>
         <ul>
-          <li>Identification is powered by AI models and may be imperfect. Results are educational, not professional botanical advice.</li>
-          <li>If a third-party AI provider processes the image, that provider may temporarily process the content according to their terms and privacy practices. Where you supply your own API key, processing typically occurs under that provider’s relationship with you.</li>
-          <li>We retain diagnosis history you choose to save so you can revisit past results. You may delete individual records or your collection where the app allows.</li>
+          <li>Identification is assistive and may be imperfect or incorrect. Results are educational, not professional botanical, medical, or veterinary advice.</li>
+          <li>If a third-party service processes the image for identification, that provider may temporarily process the content according to their terms and privacy practices.</li>
+          <li>You may delete individual plants or your collection where the app allows. Export (CSV or similar) may also be available for a local copy.</li>
         </ul>
 
-        <h2>5. Analytics and diagnostics</h2>
+        <h2>5. Accounts, cloud backup, and trades</h2>
+        <ul>
+          <li><strong>Sign in with Apple</strong> — used to authenticate your account for features such as cloud backup and restore of your plant collection, and social features like trades.</li>
+          <li><strong>Cloud backup / restore</strong> — while signed in, your plant collection may be backed up and restored so you can recover it across devices. Backup requires sign-in.</li>
+          <li><strong>Trades</strong> — trade posts, trade details, and in-app chat are shared with the other party as needed to facilitate peer-to-peer plant trading. Contact helpers you enter are user-provided and may be visible to other users as you configure them.</li>
+        </ul>
+
+        <h2>6. Analytics and diagnostics</h2>
         <p>
           We may use privacy-respecting analytics or crash reporting to understand stability and improve the product
           (for example, crash logs and aggregated feature usage). We avoid collecting plant photos into analytics tools
           unless strictly necessary for debugging a problem you report. You can limit certain tracking through your device settings where available.
         </p>
 
-        <h2>6. Third-party services</h2>
+        <h2>7. Third-party services</h2>
         <p>We may use trusted third parties to operate the Service, such as:</p>
         <ul>
-          <li>AI model and API providers (for plant identification and care text)</li>
-          <li>Cloud hosting or backend infrastructure (if accounts or sync are offered)</li>
+          <li>Sign in with Apple (account authentication)</li>
+          <li>Services that power plant identification</li>
+          <li>Infrastructure that supports accounts, cloud backup, trades, and messaging</li>
           <li>Email or support tools</li>
           <li>Analytics or crash reporting vendors</li>
         </ul>
         <p>
           These providers process data only as needed to provide their services to us and are expected to protect it appropriately.
-          External resource links inside the app (for example PlantNet, Wikipedia, RHS) are third-party sites governed by their own policies.
+          External lookup links inside the app open third-party plant databases or reference sites governed by their own policies.
         </p>
 
-        <h2>7. How we use information</h2>
+        <h2>8. How we use information</h2>
         <ul>
-          <li>Provide, maintain, and improve plant identification and care features</li>
-          <li>Save and display your plant collection and diagnosis history</li>
+          <li>Provide, maintain, and improve plant identification, collection, and trade features</li>
+          <li>Save, back up (when signed in), and display your plant collection</li>
+          <li>Enable peer-to-peer trades and in-app chat between users</li>
           <li>Respond to support requests</li>
-          <li>Send product updates if you opt in (for example, waitlist or launch emails)</li>
+          <li>Send product updates if you opt in</li>
           <li>Protect security, prevent abuse, and comply with law</li>
         </ul>
 
-        <h2>8. Sharing and sale of data</h2>
+        <h2>9. Sharing and sale of data</h2>
         <p>
           We do <strong>not</strong> sell your personal information. We do not share plant photos or collection data with advertisers.
-          We may share information only: with service providers under contract; if required by law or legal process;
-          to protect rights, safety, or security; or with your direction (for example, when you export a CSV or share a plant).
+          We may share information only: with service providers under contract; with other users when you participate in trades or share contact helpers;
+          if required by law or legal process; to protect rights, safety, or security; or with your direction (for example, when you export your collection).
         </p>
 
-        <h2>9. Data retention and security</h2>
+        <h2>10. Data retention and security</h2>
         <p>
           We retain information for as long as needed to provide the Service and for legitimate business or legal purposes.
           Collection data stored on your device remains until you delete it or uninstall the app.
           We use reasonable technical and organizational measures to protect information; no method of transmission or storage is 100% secure.
         </p>
 
-        <h2>10. Children’s privacy</h2>
+        <h2>11. Children’s privacy</h2>
         <p>
           Snap Plants is not directed to children under 13 (or the minimum age required in your region).
           We do not knowingly collect personal information from children under 13.
           If you believe a child has provided us information, contact <a href="mailto:admin@snapcollectibles.com">admin@snapcollectibles.com</a> and we will take appropriate steps to delete it.
         </p>
 
-        <h2>11. Your rights and choices</h2>
+        <h2>12. Your rights and choices</h2>
         <p>Depending on where you live, you may have rights to:</p>
         <ul>
           <li>Access, correct, or delete personal information we hold about you</li>
-          <li>Export your plant collection (where the app provides CSV export)</li>
+          <li>Export your plant collection (where the app provides CSV or similar export)</li>
           <li>Withdraw consent for optional processing (such as marketing emails)</li>
           <li>Object to or restrict certain processing</li>
           <li>Lodge a complaint with a data protection authority</li>
@@ -180,19 +190,19 @@
           You can also manage camera/photo permissions in your device settings and delete app data by uninstalling the app.
         </p>
 
-        <h2>12. International users</h2>
+        <h2>13. International users</h2>
         <p>
           If you use Snap Plants from outside the country where our systems or providers operate, your information may be processed in other countries that may have different data protection laws.
           We take steps designed to ensure appropriate safeguards where required.
         </p>
 
-        <h2>13. Changes to this policy</h2>
+        <h2>14. Changes to this policy</h2>
         <p>
           We may update this Privacy Policy from time to time. We will post the updated version with a new “Last updated” date.
           Material changes may be highlighted in the app or on our website. Continued use of the Service after changes means you accept the updated policy.
         </p>
 
-        <h2>14. Contact us</h2>
+        <h2>15. Contact us</h2>
         <p>
           Questions about privacy or this policy?<br />
           Email: <a href="mailto:admin@snapcollectibles.com">admin@snapcollectibles.com</a><br />
@@ -208,7 +218,7 @@
         <img src="../images/optimized/Icon.webp" alt="" width="40" height="40" class="rounded-xl" />
         <div class="text-left">
           <strong class="font-display text-forest block">Snap Plants</strong>
-          <span class="text-xs text-muted">Identify plants. Care with confidence.</span>
+          <span class="text-xs text-muted">Identify · Track · Trade</span>
         </div>
       </div>
       <nav class="flex flex-wrap justify-center gap-5 text-sm font-medium text-forest/70" aria-label="Footer">
@@ -217,7 +227,7 @@
         <a href="../terms/" class="hover:text-sage">Terms of Service</a>
         <a href="../support/" class="hover:text-sage">Support</a>
       </nav>
-      <p class="text-xs text-muted">In testing on iOS &amp; Android · App Store &amp; Play soon</p>
+      <p class="text-xs text-muted">Coming to the App Store for iOS</p>
       <p class="text-xs text-muted">&copy; <span data-year>2026</span> Snap Plants. All rights reserved.</p>
     </div>
   </footer>

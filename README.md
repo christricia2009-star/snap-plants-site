@@ -1,18 +1,18 @@
 # Snap Plants — Marketing & Legal Site
 
-Premium static website for **Snap Plants**, an AI plant identification & care app.
+Static website for **Snap Plants**, an iOS app for identifying plants, tracking a personal plant collection, and optionally trading plants with other users.
 
 Stack: HTML + Tailwind CSS (CDN) + minimal vanilla JS. No build step, no npm install.
 
-**Platforms:** iOS + Android (both in testing). Toggle via the segmented control in the nav.  
+**Platform:** iOS · Coming to the App Store  
 **Feedback:** [admin@snapcollectibles.com](mailto:admin@snapcollectibles.com)
 
 ## Pages
 
 | URL | Page |
 |-----|------|
-| `/` | Homepage — iOS/Android switcher, hero, story, features, gallery, feedback |
-| `/privacy/` | Privacy Policy (App Store / Play ready) |
+| `/` | Homepage — hero, how it works, features, gallery, FAQ, privacy blurb, soft App Store CTA |
+| `/privacy/` | Privacy Policy |
 | `/terms/` | Terms of Service |
 | `/support/` | Support, contact form, FAQ |
 
@@ -62,11 +62,19 @@ snap-plants-app/
 └── README.md
 ```
 
+## Product story (site copy)
+
+- **How it works:** Snap → Identify → Track → Trade
+- **Core features:** camera scan + categories, ID results + lookup links, My Plants / My Shelf, manual add, plant detail, wishlist, Sign in with Apple, trades + chat, cloud backup (signed-in), export collection, More (history/stats)
+- **Tone:** friendly, plant-care oriented, honest about assistive ID
+- **CTA:** soft “Coming to App Store” until a real link exists
+
 ## Notes
 
-- Waitlist and support forms store data in `localStorage` for local preview only.
-- Support email placeholder: `support@snapplants.app`
+- Support contact form stores data in `localStorage` for local preview only.
+- Support email: `admin@snapcollectibles.com`
 - Governing law in Terms defaults to California — update before public launch if needed.
+- Do not invent pricing or backend stack names on the marketing site.
 - All app screenshots in `/images` are used; no invented stock photography.
 
 ## Copyright
