@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Snap Plants OG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=IBM+Plex+Mono:wght@500&family=Inter:wght@500&display=swap" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; background: #050505; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      color: #F5F5F5;
+      position: relative;
+    }
+    .bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 90% at 88% 50%, rgba(255,106,0,.22), transparent 55%),
+        radial-gradient(ellipse 50% 70% at 10% 80%, rgba(255,45,45,.12), transparent 50%),
+        #050505;
+    }
+    .leaf {
+      position: absolute;
+      right: -40px; top: 50%;
+      transform: translateY(-50%);
+      width: 640px; height: 640px;
+      object-fit: cover;
+      border-radius: 40px;
+      filter: saturate(1.05) contrast(1.05);
+      mask-image: radial-gradient(circle at 50% 50%, #000 42%, transparent 72%);
+    }
+    .rule {
+      position: absolute; left: 0; top: 0; bottom: 0; width: 8px;
+      background: linear-gradient(180deg, #FFD600, #FF6A00, #FF2D2D);
+    }
+    .copy {
+      position: relative;
+      z-index: 2;
+      padding: 72px 72px;
+      width: 720px;
+    }
+    .kicker {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 18px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #FFD600;
+      margin-bottom: 22px;
+    }
+    h1 {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 900;
+      font-size: 118px;
+      line-height: .86;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+    p {
+      margin-top: 28px;
+      font-size: 26px;
+      line-height: 1.25;
+      color: #F5F5F5;
+      max-width: 560px;
+      font-weight: 500;
+    }
+    .meta {
+      margin-top: 36px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 16px;
+      color: #8A8A8A;
+      letter-spacing: .04em;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <img class="leaf" src="assets/img/hero-leaf.jpg" alt="" />
+  <div class="rule"></div>
+  <div class="copy">
+    <div class="kicker">iOS + Android · In beta</div>
+    <h1>Snap<br>Plants</h1>
+    <p>Identify, collect, and trade plants.</p>
+    <div class="meta">Assistive ID · Collection · Peer trades</div>
+  </div>
+</body>
+</html>

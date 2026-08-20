@@ -1,625 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Snap Plants — identify plants, track your collection, and trade with other plant parents on iOS. Snap, identify, track, trade." />
-  <meta name="theme-color" content="#1B4332" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>Snap Plants — Identify, track &amp; trade plants on iOS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snap Plants — Identify, collect, and trade plants</title>
+  <meta name="description" content="Photograph a plant. Get assistive ID and care notes. Keep a collection. Trade with other plant parents. iOS and Android beta." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="canonical" href="https://plants.snapcollectibles.com/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Snap Plants — Identify, track &amp; trade plants" />
-  <meta property="og:description" content="Snap a photo, grow your collection, and trade with other plant parents. Coming to the App Store." />
-  <meta property="og:image" content="images/optimized/Icon.webp" />
+  <meta property="og:title" content="Snap Plants — Identify, collect, and trade plants" />
+  <meta property="og:description" content="Photograph a plant. Get assistive ID. Save it to My Plants. Trade with other plant parents. iOS and Android beta." />
+  <meta property="og:image" content="https://plants.snapcollectibles.com/assets/img/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Snap Plants" />
-  <meta name="twitter:description" content="Identify plants, track your collection, and trade with other plant parents on iOS." />
+  <meta name="twitter:title" content="Snap Plants — Identify, collect, and trade plants" />
+  <meta name="twitter:description" content="Assistive plant ID, collection, and peer trades. iOS and Android beta." />
+  <meta name="twitter:image" content="https://plants.snapcollectibles.com/assets/img/og.png" />
 
-  <link rel="icon" type="image/webp" href="images/optimized/Icon.webp" />
-  <link rel="apple-touch-icon" href="images/Icon.jpg" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css?v=2" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            forest: { DEFAULT: '#1B4332', mid: '#2D6A4F', deep: '#0d2818' },
-            sage: { DEFAULT: '#40916C', bright: '#52B788', soft: '#E8F5E9' },
-            cream: { DEFAULT: '#F7F4EF', deep: '#EFE9DF' },
-            gold: { DEFAULT: '#C4A35A', soft: '#E8D5A3' },
-          },
-          fontFamily: {
-            display: ['"Playfair Display"', 'Georgia', 'serif'],
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Snap Plants",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "iOS, Android",
+    "description": "Photograph a plant. Get assistive ID and care notes. Keep a collection. Trade with other plant parents.",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
   </script>
-  <link rel="stylesheet" href="css/site.css" />
 </head>
-<body class="bg-cream text-ink antialiased overflow-x-hidden">
-  <div class="leaves" aria-hidden="true">
-    <span class="leaf leaf-1"></span>
-    <span class="leaf leaf-2"></span>
-    <span class="leaf leaf-3"></span>
-    <span class="leaf leaf-4"></span>
-    <span class="leaf leaf-5"></span>
-    <span class="leaf leaf-6"></span>
-  </div>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Status banner -->
-  <div class="testing-banner" role="status">
-    <span class="testing-banner__dot" aria-hidden="true"></span>
-    <span><strong>Coming to the App Store</strong> — iOS plant ID, collection &amp; trades · Feedback:
-      <a href="mailto:admin@snapcollectibles.com">admin@snapcollectibles.com</a>
-    </span>
-  </div>
-
-  <!-- Nav -->
-  <header id="siteNav" class="site-nav fixed inset-x-0 z-50">
-    <div class="max-w-6xl mx-auto h-[4.5rem] px-4 flex items-center justify-between gap-3">
-      <a href="/" class="flex items-center gap-2.5 font-display font-semibold text-lg text-forest z-10 shrink-0">
-        <img src="images/optimized/Icon.webp" alt="" width="36" height="36" class="rounded-[10px] shadow-md" />
-        <span class="hidden sm:inline">Snap Plants</span>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <img src="assets/img/mark.svg" width="28" height="28" alt="" />
+        <span class="brand-name">Snap Plants</span>
       </a>
-
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-forest/70" aria-label="Primary">
-        <a href="#how" class="nav-link hover:text-forest">How it works</a>
-        <a href="#features" class="nav-link hover:text-forest">Features</a>
-        <a href="#faq" class="nav-link hover:text-forest">FAQ</a>
-        <a href="support/" class="nav-link hover:text-forest">Support</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#identify">Identify</a>
+        <a href="#collection">Collection</a>
+        <a href="#trades">Trades</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a class="btn btn-primary nav-cta" href="#download">Request beta</a>
       </nav>
-      <a href="#download" class="btn-primary !py-2.5 !px-4 !text-sm hidden md:inline-flex">Get the app</a>
-      <button type="button" id="menuToggle" class="lg:hidden z-10 w-11 h-11 flex flex-col items-center justify-center gap-1.5" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="block w-5 h-0.5 bg-forest rounded"></span>
-        <span class="block w-5 h-0.5 bg-forest rounded"></span>
-        <span class="block w-5 h-0.5 bg-forest rounded"></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
       </button>
-    </div>
-    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[1] bg-cream/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 text-xl font-medium" hidden>
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#faq">FAQ</a>
-      <a href="support/">Support</a>
-      <a href="#download" class="btn-primary mt-2">Get the app</a>
     </div>
   </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="relative min-h-[100svh] flex flex-col justify-center pt-[7.5rem] pb-16 overflow-hidden">
-      <div class="hero-rays" aria-hidden="true"></div>
-      <div class="hero-ray-beam" aria-hidden="true"></div>
-      <div class="hero-ray-beam" aria-hidden="true"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <a href="#identify">Identify</a>
+    <a href="#collection">Collection</a>
+    <a href="#trades">Trades</a>
+    <a href="#faq">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="#download">Request beta</a>
+  </nav>
 
-      <div class="relative z-10 max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-        <div class="reveal">
-          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-forest-mid mb-4">
-            <span class="w-2 h-2 rounded-full bg-gold pulse-dot"></span>
-            <span>iOS · Coming to the App Store</span>
-          </p>
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold leading-[1.12] tracking-tight text-forest mb-5">
-            Know every plant<br />
-            <em class="not-italic italic bg-gradient-to-r from-sage to-gold bg-clip-text text-transparent">you love</em>
-          </h1>
-          <p class="text-base sm:text-lg text-forest/70 max-w-md leading-relaxed mb-6">
-            Snap Plants helps you identify plants, care for a personal collection,
-            and optionally trade with other plant parents — all on iOS.
-          </p>
-          <div class="flex flex-wrap gap-3 mb-6">
-            <a href="#download" class="btn-primary btn-magnetic">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Coming to App Store
-            </a>
-            <a href="#how" class="btn-ghost">See how it works</a>
-          </div>
-          <p class="flex items-center gap-2 text-sm text-muted font-medium">
-            <img src="images/optimized/Icon.webp" alt="" width="20" height="20" class="rounded-md" />
-            <span>Snap · Identify · Track · Trade</span>
-          </p>
-        </div>
-
-        <div class="relative reveal reveal-delay-1" data-parallax>
-          <div class="phone phone-lg phone-tilt phone--ios">
-            <div class="phone-frame">
-              <div class="phone-notch" aria-hidden="true"></div>
-              <img src="images/optimized/Scan.webp" alt="Snap Plants — choose a plant category and scan" width="900" height="1948" class="phone-screen" fetchpriority="high" />
-            </div>
-          </div>
-          <div class="absolute bottom-[16%] right-0 float-slower z-10">
-            <span class="inline-block px-4 py-2 rounded-full bg-white/95 border border-forest/10 shadow-lg text-sm font-bold text-sage">Identify &amp; track</span>
-          </div>
-        </div>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/img/hero-leaf.webp" alt="" width="1280" height="720" />
       </div>
-
-      <a href="#how" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[0.7rem] font-semibold tracking-widest uppercase text-muted hover:text-forest-mid transition z-10">
-        Discover
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="animate-bounce" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </a>
-    </section>
-
-    <div id="how" class="scroll-anchor" aria-hidden="true"></div>
-    <!-- How it works -->
-    <section class="relative z-10 py-20 sm:py-28 bg-gradient-to-b from-transparent via-sage-soft/50 to-transparent">
-      <div class="max-w-6xl mx-auto px-4">
-        <header class="text-center max-w-xl mx-auto mb-12 reveal">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">How it works</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">Snap → Identify → Track → Trade</h2>
-          <p class="text-forest/70 leading-relaxed">Four simple steps from a photo to a living collection — and trades when you’re ready.</p>
-        </header>
-
-        <div class="max-w-4xl mx-auto" data-walkthrough>
-          <div class="grid grid-cols-4 gap-1.5 p-1 mb-10 bg-white rounded-2xl border border-forest/10 shadow-sm" role="tablist" aria-label="How Snap Plants works">
-            <button type="button" class="walk-tab is-active flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="true" data-step="0">
-              <span class="text-[0.65rem] font-bold tracking-wide opacity-75">01</span>
-              <span class="text-xs sm:text-sm font-semibold">Snap</span>
-            </button>
-            <button type="button" class="walk-tab flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="false" data-step="1">
-              <span class="text-[0.65rem] font-bold tracking-wide opacity-75">02</span>
-              <span class="text-xs sm:text-sm font-semibold">Identify</span>
-            </button>
-            <button type="button" class="walk-tab flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="false" data-step="2">
-              <span class="text-[0.65rem] font-bold tracking-wide opacity-75">03</span>
-              <span class="text-xs sm:text-sm font-semibold">Track</span>
-            </button>
-            <button type="button" class="walk-tab flex flex-col items-center gap-0.5 py-3 px-1 rounded-xl text-muted" role="tab" aria-selected="false" data-step="3">
-              <span class="text-[0.65rem] font-bold tracking-wide opacity-75">04</span>
-              <span class="text-xs sm:text-sm font-semibold">Trade</span>
-            </button>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">iOS + Android · In beta</p>
+          <h1 class="display">Snap<br />Plants</h1>
+          <p class="hero-promise">Identify. Collect. Trade.</p>
+          <p class="hero-pitch">Photograph a plant. Pick a category. Get assistive ID, a care snapshot, and toxicity notes. Save it to My Plants, then trade with other plant parents — on iPhone and Android.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#download">Request beta access</a>
+            <a class="btn btn-ghost" href="#identify">See how it IDs</a>
           </div>
+          <p class="hero-micro">iOS and Android in beta · Assistive ID, not a botanist · Peer-to-peer trades · Your collection stays yours</p>
+        </div>
 
-          <div data-walk-stage class="min-h-[420px]">
-            <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="0" role="tabpanel">
-              <div>
-                <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 01</span>
-                <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Snap &amp; pick a category</h3>
-                <p class="text-forest/70 leading-relaxed mb-5">
-                  Open the camera scan, choose a category (indoor, outdoor, and more), then take a clear photo of your plant.
-                </p>
-                <ul class="space-y-2.5 text-sm font-medium text-forest/70">
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Category selection on the scan flow</li>
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Indoor and outdoor plant types</li>
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Or add a plant manually anytime</li>
-                </ul>
-              </div>
-              <div class="flex justify-center">
-                <div class="phone phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-                  <img src="images/optimized/Scan.webp" alt="Scan with category selection" class="phone-screen" loading="lazy" />
-                </div></div>
-              </div>
-            </article>
-
-            <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="1" role="tabpanel" hidden>
-              <div>
-                <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 02</span>
-                <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">See identification results</h3>
-                <p class="text-forest/70 leading-relaxed mb-5">
-                  Get assistive plant diagnosis and identification results — plus helpful lookup links to plant databases and references when you want a second look.
-                </p>
-                <ul class="space-y-2.5 text-sm font-medium text-forest/70">
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Plant ID / diagnosis results</li>
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Helpful lookup &amp; reference links</li>
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Assistive only — not expert botanical advice</li>
-                </ul>
-              </div>
-              <div class="flex justify-center">
-                <div class="phone phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-                  <img src="images/optimized/Plant1.webp" alt="Plant identification results" class="phone-screen" loading="lazy" />
-                </div></div>
-              </div>
-            </article>
-
-            <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="2" role="tabpanel" hidden>
-              <div>
-                <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 03</span>
-                <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Track your collection</h3>
-                <p class="text-forest/70 leading-relaxed mb-5">
-                  Save plants to My Plants, browse My Shelf as a photo shelf, add notes and location tags, and keep a wishlist for plants you want next.
-                </p>
-                <ul class="space-y-2.5 text-sm font-medium text-forest/70">
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>My Plants list &amp; plant detail</li>
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>My Shelf photo display</li>
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Wishlist, notes &amp; location tags</li>
-                </ul>
-              </div>
-              <div class="walk-stack w-full max-w-sm mx-auto">
-                <div class="phone phone-back phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-                  <img src="images/optimized/Plant4.webp" alt="Plant detail" class="phone-screen" loading="lazy" />
-                </div></div>
-                <div class="phone phone-front phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-                  <img src="images/optimized/MyPlants.webp" alt="My Plants collection" class="phone-screen" loading="lazy" />
-                </div></div>
-              </div>
-            </article>
-
-            <article class="walk-panel grid md:grid-cols-2 gap-10 items-center" data-step-panel="3" role="tabpanel" hidden>
-              <div>
-                <span class="text-xs font-bold tracking-widest uppercase text-gold">Step 04</span>
-                <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mt-2 mb-4">Trade with other plant parents</h3>
-                <p class="text-forest/70 leading-relaxed mb-5">
-                  Post plant trades, browse the trade feed, open trade details, and chat in-app. Swipe right on a collection plant to pre-fill a trade.
-                </p>
-                <ul class="space-y-2.5 text-sm font-medium text-forest/70">
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Trade posts, feed &amp; detail</li>
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>In-app chat between traders</li>
-                  <li class="flex items-start gap-2"><span class="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0"></span>Contact setup (username / Facebook helpers)</li>
-                </ul>
-              </div>
-              <div class="flex justify-center">
-                <div class="phone phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-                  <img src="images/optimized/MyPlants.webp" alt="Collection with trade swipe actions" class="phone-screen" loading="lazy" />
-                </div></div>
-              </div>
-            </article>
+        <div class="hero-stage">
+          <div class="hero-phones">
+            <figure class="device device-float device-back">
+              <img src="assets/screens/Scan.webp" width="900" height="1948" alt="Snap Plants scan screen asking what kind of plant this is, with houseplants, succulents, outdoor, trees, herbs, vegetables, and wildflowers." />
+            </figure>
+            <figure class="device device-float device-main">
+              <img src="assets/screens/Plant1.webp" width="900" height="1948" alt="Diagnosis result for a snake plant, Sansevieria trifasciata, 95 percent confidence, with light, water, and humidity care snapshot." />
+            </figure>
           </div>
-
-          <div class="flex items-center justify-between gap-4 mt-10 pt-6 border-t border-forest/10">
-            <button type="button" class="btn-ghost !py-2.5 !px-4 !text-sm" data-walk-prev>Back</button>
-            <div class="flex gap-1.5" aria-hidden="true">
-              <span data-pip class="w-2 h-2 rounded-full bg-sage scale-125 transition"></span>
-              <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
-              <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
-              <span data-pip class="w-2 h-2 rounded-full bg-forest/20 transition"></span>
+          <div class="hero-chips">
+            <div class="chip chip-health">
+              <div class="label">Top match</div>
+              <strong>Snake Plant · 95%</strong>
+              <span>Sansevieria trifasciata</span>
             </div>
-            <button type="button" class="btn-primary !py-2.5 !px-4 !text-sm" data-walk-next>Next</button>
+            <div class="chip chip-dna">
+              <div class="label">Scan</div>
+              <strong>Houseplants</strong>
+              <span>One plant, fill the frame</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div id="features" class="scroll-anchor" aria-hidden="true"></div>
-    <!-- Features -->
-    <section class="relative z-10 py-20 sm:py-28">
-      <div class="max-w-6xl mx-auto px-4">
-        <header class="text-center max-w-xl mx-auto mb-14 reveal">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Features</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">Built for plant people</h2>
-          <p class="text-forest/70 leading-relaxed">
-            Identification is assistive — a helpful starting point, not a substitute for expert botanical advice.
-          </p>
-        </header>
+    <div class="strip">
+      <div class="wrap strip-row">
+        <span><b>Identify</b> Camera or gallery</span>
+        <span><b>Care</b> Light, water, toxicity</span>
+        <span><b>Shelf</b> My Plants</span>
+        <span><b>Trade</b> Peer-to-peer</span>
+      </div>
+    </div>
 
-        <!-- Feature cards with screenshots -->
-        <div class="grid md:grid-cols-3 gap-6 mb-10">
-          <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal">
-            <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
-              <div class="phone phone-sm translate-y-6 phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-                <img src="images/optimized/Scan.webp" alt="" class="phone-screen" loading="lazy" />
-              </div></div>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-semibold text-forest mb-2">Camera scan</h3>
-              <p class="text-sm text-forest/70 leading-relaxed">Scan with category selection, then review plant diagnosis and identification results with handy lookup links.</p>
-            </div>
+    <section class="section" id="who">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Who it’s for</p>
+          <h2 class="display">Built for the sill, the garden, the swap.</h2>
+          <p class="lede muted">Indoor parents, outdoor gardeners, succulent collectors, and traders share the same shelf. Categories change the hint. The honesty does not: ID is assistive.</p>
+        </div>
+        <div class="audience">
+          <article>
+            <h3>Indoor</h3>
+            <p>Houseplants on the sill. Snap the leaf, save the care notes, and remember which pot is which before you overwater it again.</p>
           </article>
-          <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal reveal-delay-1">
-            <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
-              <div class="phone phone-sm translate-y-6 phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-                <img src="images/optimized/MyPlants.webp" alt="" class="phone-screen" loading="lazy" />
-              </div></div>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-semibold text-forest mb-2">My Plants &amp; My Shelf</h3>
-              <p class="text-sm text-forest/70 leading-relaxed">List your collection, open plant details with notes and location tags, or enjoy a photo-only shelf view.</p>
-            </div>
+          <article>
+            <h3>Garden</h3>
+            <p>Outdoor plants, trees, shrubs, herbs, vegetables, wildflowers. Tag the bed. Lookup links when you want a second opinion.</p>
           </article>
-          <article class="card-breathe bg-white rounded-3xl border border-forest/10 overflow-hidden shadow-sm reveal reveal-delay-2">
-            <div class="bg-gradient-to-b from-sage-soft to-cream-deep pt-8 px-6 flex justify-center min-h-[240px] overflow-hidden">
-              <div class="phone phone-sm translate-y-6 phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-                <img src="images/optimized/Plant1.webp" alt="" class="phone-screen" loading="lazy" />
-              </div></div>
-            </div>
-            <div class="p-6">
-              <h3 class="font-display text-xl font-semibold text-forest mb-2">Trades &amp; chat</h3>
-              <p class="text-sm text-forest/70 leading-relaxed">Post trades, browse the feed, open trade detail, and message other users in-app. Peer-to-peer by design.</p>
-            </div>
+          <article>
+            <h3>Succulent</h3>
+            <p>Thick-leaf plants and cacti. Confidence scores and lookalike notes so you can argue with the result, not a shopping blog.</p>
+          </article>
+          <article>
+            <h3>Trader</h3>
+            <p>Post from inventory, browse the feed, chat in-app. Swaps are between plant parents. Snap Plants does not insure them.</p>
           </article>
         </div>
+      </div>
+    </section>
 
-        <!-- Feature list grid -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">Manual add plant</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">Add plants without a scan when you already know what you have.</p>
-          </div>
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">Wishlist</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">Keep a list of plants you’re hoping to find or grow next.</p>
-          </div>
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">Sign in with Apple</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">Sign in the easy way to unlock account-backed features like cloud backup.</p>
-          </div>
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">Cloud backup &amp; restore</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">While signed in, back up and restore your plant collection across devices.</p>
-          </div>
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">Collection swipe actions</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">Swipe left to delete. Swipe right to trade — pre-fills a trade from that plant.</p>
-          </div>
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">Contact setup for trades</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">Set a username and optional Facebook helpers so traders can find each other.</p>
-          </div>
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">More: history &amp; stats</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">Extras in More — trade history and stats-style screens to review activity.</p>
-          </div>
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">Export collection</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">Export your collection (CSV or similar) when you want a portable copy.</p>
-          </div>
-          <div class="bg-white rounded-2xl border border-forest/10 p-5 shadow-sm reveal">
-            <h3 class="font-semibold text-forest mb-1.5">Plant detail</h3>
-            <p class="text-sm text-forest/70 leading-relaxed">Notes, location tags, and the details you care about for each plant.</p>
-          </div>
+    <section class="section" id="pillars" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">What ships</p>
+          <h2 class="display">Six things on the phone, not on a slide.</h2>
         </div>
-
-        <!-- Honest ID callout -->
-        <div class="grid md:grid-cols-2 gap-10 items-center p-8 sm:p-12 bg-white rounded-[2rem] border border-forest/10 shadow-md reveal">
-          <div>
-            <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Honest by design</p>
-            <h3 class="font-display text-2xl sm:text-3xl font-semibold text-forest mb-4 leading-tight">Helpful ID — not a guarantee</h3>
-            <p class="text-forest/70 leading-relaxed mb-5">
-              Snap Plants uses photos to suggest plant identity and care context. Results can be wrong.
-              Double-check important decisions with trusted sources or a professional.
-            </p>
-            <ul class="space-y-3 text-sm font-medium text-forest/70">
-              <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-sage-soft flex items-center justify-center text-forest-mid text-xs">✓</span> Assistive identification only</li>
-              <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-sage-soft flex items-center justify-center text-forest-mid text-xs">✓</span> Lookup links for further reading</li>
-              <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-sage-soft flex items-center justify-center text-forest-mid text-xs">✓</span> No medical or toxicity guarantees</li>
-            </ul>
-          </div>
-          <div class="flex justify-center">
-            <div class="phone phone--ios"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div>
-              <img src="images/optimized/Plant2.webp" alt="Plant care and identification detail" class="phone-screen" loading="lazy" />
-            </div></div>
-          </div>
+        <div class="pillar-grid">
+          <article class="pillar">
+            <div class="num">01</div>
+            <h3>Camera scan</h3>
+            <p>Photograph one plant, or pick from the gallery. Categories are optional hints — the photo is what gets identified.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">02</div>
+            <h3>Assistive ID</h3>
+            <p>Suggested name, scientific name, confidence. Care snapshot. Toxicity notes. Lookup links. Learning and reference. Not a botanist.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">03</div>
+            <h3>Diagnosis</h3>
+            <p>Symptoms, possible causes, care advice. Android also splits Identify, Diagnose Issue, Toxic Check, and Weed ID.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">04</div>
+            <h3>My Plants</h3>
+            <p>A list and a shelf of what you actually own. Filter All, Wishlist, or Selling. Notes and location tags live on the plant.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">05</div>
+            <h3>Peer trades</h3>
+            <p>Post an offer from inventory, browse the feed, open detail, chat. Contact details are yours to share.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">06</div>
+            <h3>Backup</h3>
+            <p>Cloud backup and restore while signed in. Export and import CSV where the app supports it. A new phone should not wipe the shelf.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <div id="gallery" class="scroll-anchor" aria-hidden="true"></div>
-    <!-- Gallery -->
-    <section class="relative z-10 py-20 sm:py-28 bg-gradient-to-b from-transparent via-cream-deep to-transparent">
-      <div class="max-w-6xl mx-auto px-4">
-        <header class="text-center max-w-xl mx-auto mb-12 reveal">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Inside the app</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest leading-tight mb-4">A peek at Snap Plants</h2>
-          <p class="text-forest/70 leading-relaxed">Real screens from the iOS experience.</p>
-        </header>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Scan.webp" data-caption="Snap — choose a category and scan">
-            <img src="images/optimized/Scan.webp" alt="Snap" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="gallery-cap">Snap</span>
-          </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] sm:row-span-2 sm:aspect-auto sm:min-h-full rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant1.webp" data-caption="Identify — plant diagnosis results">
-            <img src="images/optimized/Plant1.webp" alt="Identify" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="gallery-cap">Identify</span>
-          </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant2.webp" data-caption="Plant detail &amp; care context">
-            <img src="images/optimized/Plant2.webp" alt="Detail" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="gallery-cap">Detail</span>
-          </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant3.webp" data-caption="Lookup links &amp; references">
-            <img src="images/optimized/Plant3.webp" alt="Lookups" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="gallery-cap">Lookups</span>
-          </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/MyPlants.webp" data-caption="My Plants collection">
-            <img src="images/optimized/MyPlants.webp" alt="Collection" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="gallery-cap">My Plants</span>
-          </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Plant4.webp" data-caption="Plant history &amp; extras">
-            <img src="images/optimized/Plant4.webp" alt="More" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="gallery-cap">More</span>
-          </button>
-          <button type="button" class="gallery-item relative aspect-[9/16] rounded-2xl overflow-hidden bg-white border border-forest/10 shadow-sm" data-lightbox="images/optimized/Settings.webp" data-caption="Settings &amp; Sign in with Apple">
-            <img src="images/optimized/Settings.webp" alt="Settings" class="w-full h-full object-cover object-top" loading="lazy" />
-            <span class="gallery-cap">Account</span>
-          </button>
-          <div class="relative aspect-[9/16] rounded-2xl overflow-hidden border border-forest/10 shadow-sm flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-sage-soft to-cream-deep" aria-hidden="true">
-            <img src="images/optimized/Icon.webp" alt="" class="w-[56%] rounded-[22%] shadow-lg" loading="lazy" />
-            <span class="gallery-cap !static">Snap Plants</span>
+    <section class="section" id="identify">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">Identify <span class="badge badge-live">Live</span></p>
+          <h2 class="display">Snap a plant. Pick a category. Read the score.</h2>
+          <p class="lede">Houseplants, succulents and cacti, outdoor garden plants, trees and shrubs, herbs, vegetables, wildflowers, or not sure. Categories narrow the hint. The photo still does the work.</p>
+          <p class="muted">You get a suggested name, scientific name, confidence, a care snapshot (light, water, humidity, soil), toxicity notes, and lookup links — PlantNet, Wikipedia, RHS, Missouri Botanical, iNaturalist. If the match is uncertain, treat it as a starting point.</p>
+          <ul class="feature-list">
+            <li>Camera or gallery. One plant, fill the frame, decent light.</li>
+            <li>Optional category chips — they hint the catalog, they do not replace the image.</li>
+            <li>Android: Identify Plant, Diagnose Issue, Toxic Check, and Weed ID as separate scan modes.</li>
+            <li>Diagnosis history so you can revisit a maybe.</li>
+            <li>Identifications are estimates for learning and reference. Not a certified botanical ID.</li>
+          </ul>
+        </div>
+        <figure class="device device-solo">
+          <img src="assets/screens/Scan.webp" width="900" height="1948" alt="Snap Plants scan: What kind of plant is this, with houseplants, succulents and cacti, outdoor garden plants, trees and shrubs, herbs, vegetables, wildflowers, and Not Sure." />
+        </figure>
+      </div>
+      <div class="wrap" style="margin-top: 36px;">
+        <div class="device-row">
+          <figure class="device">
+            <img src="assets/screens/Plant1.webp" width="900" height="1948" alt="Snake plant diagnosis with 95 percent confidence and a care snapshot for light, water, and humidity." />
+            <figcaption>ID + care</figcaption>
+          </figure>
+          <figure class="device">
+            <img src="assets/screens/Plant2.webp" width="900" height="1948" alt="Diagnosis continuation: soil, common pests, mature size, symptoms, possible causes, and care advice." />
+            <figcaption>Diagnosis</figcaption>
+          </figure>
+          <figure class="device">
+            <img src="assets/screens/Plant3.webp" width="900" height="1948" alt="Toxicity notes, additional notes, and helpful resources linking to PlantNet, Wikipedia, RHS, Missouri Botanical, and iNaturalist." />
+            <figcaption>Lookups</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collection">
+      <div class="wrap split reverse">
+        <div>
+          <p class="kicker">Collection <span class="badge badge-live">Live</span></p>
+          <h2 class="display">Journal it. Shelf it. Flag it for sale.</h2>
+          <p class="lede">More than an identifier. A personal collection with search, wishlist, and selling filters.</p>
+          <ul class="feature-list">
+            <li>My Plants list with All, Wishlist, and Selling.</li>
+            <li>Plant detail: notes, location tags, diagnosis history.</li>
+            <li>Manual add when you already know what you have.</li>
+            <li>Swipe left to delete. Swipe right to wishlist or pre-fill a trade.</li>
+            <li>Import / export CSV. Cloud backup / restore while signed in.</li>
+          </ul>
+        </div>
+        <figure class="device device-solo">
+          <img src="assets/screens/MyPlants.webp" width="900" height="1948" alt="My Plants collection listing a snake plant at 95 percent, with All, Wishlist, and Selling filters." />
+        </figure>
+      </div>
+    </section>
+
+    <section class="ember-band">
+      <div class="wrap">
+        <p class="kicker">Honest ID</p>
+        <h2 class="display">A photo is not a botanist.</h2>
+        <p class="lede" style="max-width: 46ch;">AI identification is assistive — for learning and reference. It is not a substitute for a professional botanist, horticulturist, or veterinarian. Confirm anything about edibility, toxicity, or disease before you act.</p>
+      </div>
+    </section>
+
+    <section class="section" id="trades">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">Trades <span class="badge badge-live">Live</span></p>
+          <h2 class="display">Swap from inventory. Chat in the app.</h2>
+          <p class="lede">Pick a plant you already logged. Post the offer. Browse the feed. Open detail. Message.</p>
+          <p class="muted">Trades are peer-to-peer between plant parents. Snap Plants does not insure, escrow, ship, or take payment. Contact details — username and optional Facebook helpers — are information you choose to share.</p>
+          <ul class="feature-list">
+            <li>Sign in to post and view trades. Apple on iOS. Google on Android.</li>
+            <li>Swipe right on a collection plant to pre-fill a trade.</li>
+            <li>Selling filter on My Plants so for-sale plants are not mixed into the rest of the shelf.</li>
+          </ul>
+        </div>
+        <figure class="device device-solo">
+          <img src="assets/screens/MyPlants.webp" width="900" height="1948" alt="My Plants with Selling and Wishlist filters used to flag plants for trade." />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">How it works</p>
+          <h2 class="display">Snap. Identify. Save. Trade.</h2>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <h3>Snap the plant</h3>
+            <p>Open the camera or pick a gallery photo. One plant, fill the frame. Crop if you have to. Four plants in one shot will lie to you.</p>
+          </article>
+          <article class="step">
+            <h3>Identify by category</h3>
+            <p>Optional chips: houseplants, succulents, outdoor, trees, herbs, vegetables, wildflowers, not sure. Review confidence, care, toxicity, and lookups.</p>
+          </article>
+          <article class="step">
+            <h3>Save to My Plants</h3>
+            <p>Add notes and a location tag. Flag wishlist or selling. See it on the shelf. The values you type are yours.</p>
+          </article>
+          <article class="step">
+            <h3>Trade if you want</h3>
+            <p>Post from inventory, browse the feed, chat in-app. The swap is between you and the other plant parent.</p>
+          </article>
+          <article class="step">
+            <h3>Back it up</h3>
+            <p>Sign in. Sync or export CSV. A future beta should not be the reason the shelf disappears.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="settings" style="padding-top:0;">
+      <div class="wrap split reverse">
+        <div>
+          <p class="kicker">Account <span class="badge badge-live">Live</span></p>
+          <h2 class="display">Sign in, export, bring your own key if you want.</h2>
+          <p class="muted">Scan and journal without an account. Sign-in unlocks backup, restore, and trades. An optional OpenRouter key lives in Settings — the app can use a default until you add your own. Identification remains educational. The disclaimer in Settings says so out loud.</p>
+          <ul class="feature-list">
+            <li>iOS: Sign in with Apple. Export / import collection CSV.</li>
+            <li>Android: Sign in with Google. CSV import / export. AI Botanist chat and a plant encyclopedia from Settings.</li>
+            <li>OpenRouter key can be tested and saved on-device.</li>
+          </ul>
+        </div>
+        <figure class="device device-solo">
+          <img src="assets/screens/Settings.webp" width="900" height="1948" alt="Settings with OpenRouter API key, export and import collection CSV, and a disclaimer that identification is educational only." />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2 class="display">Straight answers for plant people.</h2>
+          <p class="lede muted">What Snap Plants does — and what it does not claim.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How accurate is plant identification?</summary>
+            <p>Identification is assistive and can be wrong. Photo quality, lighting, and similar-looking species all affect results. Use the lookup links, and always verify important decisions — especially edibility or toxicity — with trusted sources or a professional.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need to sign in?</summary>
+            <p>You can scan and journal without an account. Sign in with Apple (iOS) or Google (Android) unlocks cloud backup, trades, and account features. Stay signed in if you want the shelf to follow you to a new phone.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why pick a category when I scan?</summary>
+            <p>Houseplants, succulents, outdoor, trees, herbs, vegetables, or wildflowers help focus identification. Use Not Sure when you are not sure. The photo is still what gets identified. On Android you can also choose Identify, Diagnose, Toxic Check, or Weed ID first.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do trades work?</summary>
+            <p>Trades are peer-to-peer between users. Post offers, pick a plant from inventory, browse the feed, open detail, and chat in-app. Snap Plants does not insure, ship, or process payments.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is the camera used for?</summary>
+            <p>Photographing plants for identification, diagnosis, and your collection journal. Not unrelated uses.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How does the Android beta invite work?</summary>
+            <p>Google Play internal testing does not email testers automatically. After you request Android beta, this site shows the Play test URL. Copy it and keep it. The URL becomes active once your email is added to the tester list — please allow up to a few hours.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Ownership</p>
+          <h2 class="display">Your shelf is yours. Photos are for plants.</h2>
+          <p class="lede muted">Camera and photos are used for plant identification and the collection journal. Trade contact details are information you choose to provide. Sign-in is for account features like backup and trades.</p>
+        </div>
+        <div class="pillar-grid">
+          <article class="pillar">
+            <div class="num">Camera</div>
+            <h3>Plants only</h3>
+            <p>Photos support ID, diagnosis, and journaling. They are not a general-purpose social feed.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">Sign-in</div>
+            <h3>Apple or Google</h3>
+            <p>iOS uses Sign in with Apple. Android uses Google. Cloud backup requires an account.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">Trades</div>
+            <h3>You share contact</h3>
+            <p>Username and optional Facebook helpers are user-provided so other plant parents can reach you.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">This site</div>
+            <h3>No analytics SDK</h3>
+            <p>The beta form sends App name, phone OS, and email to admin@snapcollectibles.com. Nothing else.</p>
+          </article>
+        </div>
+        <p style="margin-top:24px;"><a href="privacy.html">Read the full privacy page →</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="wrap">
+        <div class="cta-panel">
+          <p class="kicker">Beta</p>
+          <h2 class="display">iOS and Android. Both in beta.</h2>
+          <p class="lede muted" style="max-width:44ch;">Request a tester slot. We get App name, phone OS, and your email — nothing else. Android testers must copy the Play test URL on the next screen. Google will not email it.</p>
+          <div class="btn-row" style="margin-top:8px;">
+            <span class="store-btn" aria-disabled="true">
+              <small>In beta</small>
+              <b>iOS</b>
+            </span>
+            <span class="store-btn" aria-disabled="true">
+              <small>In beta</small>
+              <b>Android</b>
+            </span>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <div id="faq" class="scroll-anchor" aria-hidden="true"></div>
-    <!-- FAQ -->
-    <section class="relative z-10 py-20 sm:py-28">
-      <div class="max-w-3xl mx-auto px-4">
-        <header class="text-center mb-10 reveal">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">FAQ</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-forest mb-3">Common questions</h2>
-          <p class="text-forest/70 leading-relaxed">Straight answers about ID, trades, backup, and privacy.</p>
-        </header>
-
-        <div class="space-y-3">
-          <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm open:shadow-md transition reveal">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
-              How accurate is plant identification?
-              <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </summary>
-            <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
-              Identification is assistive and can be wrong. Photo quality, lighting, and similar-looking species all affect results.
-              Use the app’s lookup links, and always verify important decisions (especially anything related to edibility or toxicity) with trusted sources or a professional.
+          <div class="android-persist" id="android-persist" hidden>
+            <p class="kicker">Android tester link</p>
+            <h3>Keep this URL.</h3>
+            <p class="tester-warn">This URL will be active once your email has been added to the tester list. Please allow up to a few hours. The Google Play interface does not auto-send emails to testers.</p>
+            <div class="tester-url-row">
+              <code class="tester-url" data-tester-url tabindex="0" aria-label="Android tester URL"></code>
+              <button class="btn btn-ghost" type="button" id="copy-tester-url-persist">Copy</button>
             </div>
-          </details>
-
-          <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm reveal">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
-              Do I need to Sign in with Apple?
-              <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </summary>
-            <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
-              You can explore much of the app without an account. Sign in with Apple unlocks account-backed features such as cloud backup and restore of your plant collection, and features that involve other users (like trades).
-            </div>
-          </details>
-
-          <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm reveal">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
-              How do trades work?
-              <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </summary>
-            <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
-              Trades are peer-to-peer. You can post a plant trade, browse the trade feed, open trade detail, and chat in-app.
-              Set up contact helpers (username / Facebook) so others know how to reach you. Snap Plants does not handle payments or shipping for you.
-            </div>
-          </details>
-
-          <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm reveal">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
-              Does cloud backup require sign-in?
-              <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </summary>
-            <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
-              Yes. Cloud backup and restore of your plant collection is available while you’re signed in.
-              You can also export your collection (CSV or similar) for a local copy when the app supports it.
-            </div>
-          </details>
-
-          <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm reveal">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
-              Indoor vs outdoor categories — does it matter?
-              <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </summary>
-            <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
-              Yes — choosing a category on the scan flow (for example indoor vs outdoor types) helps the app give more relevant identification results.
-              If you’re unsure, pick the closest match or add the plant manually later.
-            </div>
-          </details>
-
-          <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm reveal">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
-              What about my camera and privacy?
-              <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </summary>
-            <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
-              The camera is used for plant identification and collection photos. Optional trade contact info (like username or Facebook helpers) is provided by you.
-              We don’t sell your photos. See our <a href="privacy/" class="text-sage font-medium underline">Privacy Policy</a> for full details.
-            </div>
-          </details>
-
-          <details class="faq-item group bg-white rounded-2xl border border-forest/10 shadow-sm reveal">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 sm:p-6 font-semibold text-forest">
-              When will Snap Plants be on the App Store?
-              <svg class="faq-chevron w-5 h-5 text-sage shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </summary>
-            <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-forest/70 leading-relaxed -mt-1">
-              Snap Plants is coming to the App Store for iOS. For early access or feedback, email
-              <a href="mailto:admin@snapcollectibles.com" class="text-sage font-medium underline">admin@snapcollectibles.com</a>.
-              We’ll post an App Store link here when it’s available.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Privacy blurb -->
-    <section id="privacy-blurb" class="relative z-10 py-16 sm:py-20">
-      <div class="max-w-3xl mx-auto px-4">
-        <div class="p-8 sm:p-10 bg-white rounded-[2rem] border border-forest/10 shadow-sm reveal text-center">
-          <p class="text-xs font-semibold tracking-wider uppercase text-forest-mid mb-3">Privacy-minded</p>
-          <h2 class="font-display text-2xl sm:text-3xl font-semibold text-forest mb-4">Your plants, your photos, your control</h2>
-          <p class="text-forest/70 leading-relaxed mb-4 max-w-xl mx-auto">
-            The camera is used for plant ID and collection photos. Optional trade contact details are user-provided.
-            Sign in enables cloud backup of your collection — and you can export a copy when you want one.
-          </p>
-          <p class="text-sm text-muted">
-            Read the full <a href="privacy/" class="text-sage font-medium underline">Privacy Policy</a>
-            and <a href="terms/" class="text-sage font-medium underline">Terms of Service</a>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Soft CTA -->
-    <section id="download" class="relative z-10 py-16 sm:py-24">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="relative px-6 py-12 sm:px-10 sm:py-14 rounded-[2rem] overflow-hidden text-cream shadow-xl reveal" style="background: linear-gradient(160deg, #1B4332 0%, #0d2818 100%);">
-          <div class="absolute top-[-40%] right-[-15%] w-[55%] h-[80%] rounded-full bg-sage-bright/30 blur-3xl pointer-events-none" aria-hidden="true"></div>
-
-          <div class="relative z-10 max-w-xl mx-auto text-center">
-            <img src="images/optimized/Icon.webp" alt="" width="56" height="56" class="w-14 h-14 rounded-2xl mx-auto mb-5 shadow-2xl" />
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 text-gold-soft text-xs font-bold tracking-wide uppercase mb-4">
-              iOS · Coming soon
-            </div>
-            <h2 class="font-display text-3xl sm:text-4xl font-semibold leading-tight mb-3">Coming to the App Store</h2>
-            <p class="text-cream/75 leading-relaxed mb-8">
-              Snap Plants is an iOS app for identifying plants, tracking your collection, and trading with other plant parents.
-              An App Store (or TestFlight) link will appear here when available.
-            </p>
-            <div class="flex flex-wrap justify-center gap-3 mb-6">
-              <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/15 text-sm font-semibold text-cream/90 cursor-default" title="App Store link coming soon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                Coming to App Store
-              </span>
-              <a href="mailto:admin@snapcollectibles.com?subject=Snap%20Plants%20feedback" class="btn-gold !py-3 !px-5">
-                Send feedback
-              </a>
-            </div>
-            <p class="text-xs text-cream/45 leading-relaxed">
-              Questions or early access? Email
-              <a href="mailto:admin@snapcollectibles.com" class="text-gold-soft font-semibold underline underline-offset-2">admin@snapcollectibles.com</a>.
-            </p>
-            <div class="flex flex-wrap justify-center gap-2 mt-8">
-              <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Identify</span>
-              <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Collection</span>
-              <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Trades</span>
-              <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 border border-white/10 text-cream/85">Sign in with Apple</span>
-            </div>
+            <p class="form-status" data-state="ok">Request received. You confirmed you copied the link.</p>
           </div>
+
+          <form class="form" id="beta-form" novalidate>
+            <input type="hidden" name="_subject" value="Snap Plants beta tester request" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <label for="app-name">App name</label>
+            <input id="app-name" name="App Name" type="text" value="Snap Plants" readonly />
+
+            <fieldset class="os-fieldset">
+              <legend>Phone OS</legend>
+              <div class="os-choice">
+                <label class="os-card">
+                  <input type="radio" name="Phone OS" value="iOS" required />
+                  <span class="os-card-title">iOS</span>
+                  <span class="os-card-meta">iPhone + iPad</span>
+                </label>
+                <label class="os-card">
+                  <input type="radio" name="Phone OS" value="Android" />
+                  <span class="os-card-title">Android</span>
+                  <span class="os-card-meta">Phone + tablet</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@greenhouse.local" required />
+
+            <button class="btn btn-primary" type="submit">Request to be a beta tester</button>
+            <p class="form-note">Sends App name, phone OS, and email to <span class="mono">admin@snapcollectibles.com</span>. No newsletter. Android: you must copy the Play test URL after submit.</p>
+            <p class="form-status" id="beta-status" role="status"></p>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="relative z-10 border-t border-forest/10 bg-cream-deep py-12">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-6 text-center">
-      <div class="flex items-center gap-3">
-        <img src="images/optimized/Icon.webp" alt="" width="40" height="40" class="rounded-xl" />
-        <div class="text-left">
-          <strong class="font-display text-forest block">Snap Plants</strong>
-          <span class="text-xs text-muted">Identify · Track · Trade</span>
-        </div>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <img src="assets/img/mark.svg" width="28" height="28" alt="" />
+          <span class="brand-name">Snap Plants</span>
+        </a>
+        <p>Identify plants. Keep the shelf. Trade with plant parents.</p>
       </div>
-      <nav class="flex flex-wrap justify-center gap-5 text-sm font-medium text-forest/70" aria-label="Footer">
-        <a href="#how" class="hover:text-sage">How it works</a>
-        <a href="#features" class="hover:text-sage">Features</a>
-        <a href="#faq" class="hover:text-sage">FAQ</a>
-        <a href="privacy/" class="hover:text-sage">Privacy Policy</a>
-        <a href="terms/" class="hover:text-sage">Terms of Service</a>
-        <a href="support/" class="hover:text-sage">Support</a>
-      </nav>
-      <p class="text-xs text-muted max-w-lg leading-relaxed">
-        Snap Plants provides assistive plant identification and collection tools. Results may be incorrect —
-        always double-check critical advice. Feedback:
-        <a href="mailto:admin@snapcollectibles.com" class="text-sage underline">admin@snapcollectibles.com</a>
-      </p>
-      <p class="text-xs text-muted">Coming to the App Store for iOS</p>
-      <p class="text-xs text-muted">&copy; <span data-year>2026</span> Snap Plants. All rights reserved.</p>
+      <div class="footer-col">
+        <h2>Product</h2>
+        <a href="#identify">Identify</a>
+        <a href="#collection">Collection</a>
+        <a href="#trades">Trades</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2>Trust</h2>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </div>
+      <div class="footer-col">
+        <h2>Get it</h2>
+        <a href="#download">Request beta</a>
+        <span class="muted">iOS + Android beta</span>
+      </div>
+    </div>
+    <div class="wrap footer-legal">
+      <span>© <span data-year></span> Snap Plants. All rights reserved.</span>
+      <span>Assistive ID · Peer-to-peer trades · iOS + Android beta</span>
     </div>
   </footer>
 
-  <div id="lightbox" class="lightbox fixed inset-0 z-[200] bg-forest-deep/90 backdrop-blur-md flex items-center justify-center p-6" hidden role="dialog" aria-modal="true" aria-label="Image preview">
-    <button type="button" id="lightboxClose" class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition" aria-label="Close">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-    <div class="lightbox-frame max-w-[360px] flex flex-col items-center gap-4">
-      <img id="lightboxImg" src="" alt="" class="max-h-[80vh] w-auto rounded-3xl shadow-2xl border-2 border-white/10" />
-      <p id="lightboxCap" class="text-cream/80 text-sm font-medium text-center"></p>
+  <div class="tester-modal" id="tester-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tester-title">
+    <div class="tester-card">
+      <p class="kicker">Android tester link</p>
+      <h2 class="display" id="tester-title">Copy this URL. Keep it.</h2>
+      <p class="tester-warn">This URL will be active once your email has been added to the tester list. Please allow up to a few hours. The Google Play interface does not auto-send emails to testers.</p>
+      <p class="muted" style="margin:0 0 14px;">Request email: <span class="mono" data-tester-email></span></p>
+      <div class="tester-url-row">
+        <code class="tester-url" id="tester-url" data-tester-url tabindex="0" aria-label="Android tester URL"></code>
+        <button class="btn btn-primary" type="button" id="copy-tester-url">Copy</button>
+      </div>
+      <label class="tester-ack" for="tester-copied">
+        <input id="tester-copied" type="checkbox" />
+        <span>I have copied this URL and will keep it. I understand it will not work until my email is on the tester list.</span>
+      </label>
+      <button class="btn btn-primary" type="button" id="tester-done" disabled>I’ve copied and kept this URL</button>
+      <p class="form-note" style="margin-top:12px;">You cannot dismiss this until you check the box. Google will not email you this link.</p>
     </div>
   </div>
 
-  <script src="js/site.js" defer></script>
+  <svg width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="ember" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FFD600" />
+        <stop offset="0.55" stop-color="#FF6A00" />
+        <stop offset="1" stop-color="#FF2D2D" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

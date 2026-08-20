@@ -1,82 +1,69 @@
-# Snap Plants — Marketing & Legal Site
+# Snap Plants — marketing site
 
-Static website for **Snap Plants**, an iOS app for identifying plants, tracking a personal plant collection, and optionally trading plants with other users.
+Brand site for **Snap Plants**, the collector app for plants. iOS and Android are both in beta. This is the public home: identify, collection, trades, privacy, and a beta request form.
 
-Stack: HTML + Tailwind CSS (CDN) + minimal vanilla JS. No build step, no npm install.
-
-**Platform:** iOS · Coming to the App Store  
-**Feedback:** [admin@snapcollectibles.com](mailto:admin@snapcollectibles.com)
-
-## Pages
-
-| URL | Page |
-|-----|------|
-| `/` | Homepage — hero, how it works, features, gallery, FAQ, privacy blurb, soft App Store CTA |
-| `/privacy/` | Privacy Policy |
-| `/terms/` | Terms of Service |
-| `/support/` | Support, contact form, FAQ |
+Layout and design follow the BassheadOS site: dark bay, electric yellow, ember, Big Shoulders Display.
 
 ## Run locally
 
-```bash
-cd /Users/chris.cameron/snap-plants-app
-python3 -m http.server 8080
-```
-
-Open:
-
-- http://localhost:8080/
-- http://localhost:8080/privacy/
-- http://localhost:8080/terms/
-- http://localhost:8080/support/
-
-### Alternatives
+Any static server from the repo root works.
 
 ```bash
-npx --yes serve . -l 8080
-# or
-php -S localhost:8080
+# Python
+python3 -m http.server 4173
+
+# Node
+npx --yes serve -l 4173
 ```
 
-### iPhone on the same Wi‑Fi
+Open [http://localhost:4173](http://localhost:4173).
 
-```bash
-python3 -m http.server 8080 --bind 0.0.0.0
-ipconfig getifaddr en0   # your Mac LAN IP
-```
+There is no build step. HTML, CSS, and JS are the source.
 
-On iPhone Safari: `http://YOUR_IP:8080`
+## What’s in the box
 
-## Project structure
+| Path | Role |
+| --- | --- |
+| `index.html` | Home: hero, pillars, Identify / Collection / Trades, FAQ, privacy teaser, beta request |
+| `privacy.html` | Camera, sign-in, trades, this site |
+| `terms.html` | Terms of Service |
+| `support.html` | Support contact + Android tester URL reminder |
+| `assets/css/site.css` | Design system |
+| `assets/js/site.js` | Sticky header, mobile nav, beta form → `admin@snapcollectibles.com`, Android tester-URL gate |
+| `assets/screens/` | WebP frames from the iOS and Android apps |
+| `Screenshots/` | Original captures |
+| `assets/img/` | Mark, favicon, apple-touch, OG, hero leaf |
 
-```
-snap-plants-app/
-├── index.html
-├── privacy/index.html
-├── terms/index.html
-├── support/index.html
-├── css/site.css          # Organic motion, phone frames, legal prose
-├── js/site.js            # Nav, walkthrough, forms, lightbox
-├── images/               # Originals
-│   └── optimized/        # WebP (used on site)
-└── README.md
-```
+## Beta requests
 
-## Product story (site copy)
+The form posts App name (`Snap Plants`), phone OS (`iOS` or `Android`), and email to [FormSubmit](https://formsubmit.co) → **admin@snapcollectibles.com**.
 
-- **How it works:** Snap → Identify → Track → Trade
-- **Core features:** camera scan + categories, ID results + lookup links, My Plants / My Shelf, manual add, plant detail, wishlist, Sign in with Apple, trades + chat, cloud backup (signed-in), export collection, More (history/stats)
-- **Tone:** friendly, plant-care oriented, honest about assistive ID
-- **CTA:** soft “Coming to App Store” until a real link exists
+The first live submission sends a confirmation message to that inbox. Click it once so later requests land automatically. If the service is blocked, the page falls back to a `mailto:` draft with the same three fields.
 
-## Notes
+### Android tester URL
 
-- Support contact form stores data in `localStorage` for local preview only.
-- Support email: `admin@snapcollectibles.com`
-- Governing law in Terms defaults to California — update before public launch if needed.
-- Do not invent pricing or backend stack names on the marketing site.
-- All app screenshots in `/images` are used; no invented stock photography.
+Google Play internal testing does **not** email testers. After an Android request, the page shows:
 
-## Copyright
+`https://play.google.com/apps/internaltest/4701169274084912075`
 
-© 2026 Snap Plants. All rights reserved.
+The tester must copy that URL and check a box acknowledging they kept it. The URL is active once the email has been added to the tester list — please allow up to a few hours.
+
+Change the inbox in `assets/js/site.js` (`BETA_INBOX`) if needed.
+
+## Stores
+
+iOS and Android are labeled **In beta**. Swap the badges for store URLs when the public listings are live.
+
+## Domain / SEO
+
+Canonicals, sitemap, and robots assume `https://plants.snapcollectibles.com/`. Open Graph image is `assets/img/og.png` (1200×630).
+
+Old paths `/privacy/`, `/terms/`, and `/support/` redirect to the root HTML files.
+
+## Tone / honesty
+
+Live features are labeled **Live**. Identification is assistive, not a certified botanical ID. Trades are peer-to-peer. No fake rankings, testimonials, or download counts.
+
+## License
+
+© Snap Plants. All rights reserved.
