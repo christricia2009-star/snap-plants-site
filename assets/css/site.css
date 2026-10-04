@@ -647,6 +647,10 @@ body.nav-open .nav-toggle .bars::after { top: 0; transform: rotate(-45deg); }
   max-width: 16ch;
 }
 
+.ember-band .lede {
+  max-width: 62ch;
+}
+
 /* ---------- cards / grids ---------- */
 
 .pillar-grid {
@@ -687,10 +691,36 @@ body.nav-open .nav-toggle .bars::after { top: 0; transform: rotate(-45deg); }
   text-transform: uppercase;
 }
 
-.pillar p {
+.pillar p,
+.pillar li {
   margin: 0;
   color: var(--muted);
   font-size: 15px;
+}
+
+.pillar ul {
+  margin: 12px 0 0;
+  padding-left: 1.15em;
+}
+
+.pillar li + li {
+  margin-top: 8px;
+}
+
+.plan-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.hero-tagline {
+  max-width: 28ch;
+}
+
+.legal-meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 18px;
 }
 
 .split {
@@ -1226,7 +1256,7 @@ code {
   display: none;
   position: fixed;
   inset: var(--header-h) 0 0;
-  background: rgba(5, 5, 5, 0.96);
+  background: #050505;
   z-index: 40;
   padding: 20px;
 }
@@ -1287,8 +1317,12 @@ body.nav-open { overflow: hidden; }
     grid-template-columns: 1fr auto;
   }
 
+  .plan-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .footer-grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
   }
 
   .cta-panel { padding: 40px; }

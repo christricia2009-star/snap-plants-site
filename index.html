@@ -3,31 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Snap Plants — Identify, collect, and trade plants</title>
-  <meta name="description" content="Photograph a plant. Get assistive ID and care notes. Keep a collection. Trade with other plant parents. iOS and Android beta." />
+  <title>Snap Plants — Identify · Diagnose · Care · Trade</title>
+  <meta name="description" content="Snap Plants identifies and diagnoses plants from a photo, keeps a collection, and lets collectors trade and chat. An independent collector tool from True Family." />
   <meta name="theme-color" content="#050505" />
   <link rel="canonical" href="https://plants.snapcollectibles.com/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Snap Plants — Identify, collect, and trade plants" />
-  <meta property="og:description" content="Photograph a plant. Get assistive ID. Save it to My Plants. Trade with other plant parents. iOS and Android beta." />
+  <meta property="og:url" content="https://plants.snapcollectibles.com/" />
+  <meta property="og:title" content="Snap Plants — Identify · Diagnose · Care · Trade" />
+  <meta property="og:description" content="Snap Plants identifies and diagnoses plants from a photo, keeps a collection, and lets collectors trade and chat." />
   <meta property="og:image" content="https://plants.snapcollectibles.com/assets/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Snap Plants — Identify, collect, and trade plants" />
-  <meta name="twitter:description" content="Assistive plant ID, collection, and peer trades. iOS and Android beta." />
+  <meta name="twitter:title" content="Snap Plants — Identify · Diagnose · Care · Trade" />
+  <meta name="twitter:description" content="Snap Plants identifies and diagnoses plants from a photo, keeps a collection, and lets collectors trade and chat." />
   <meta name="twitter:image" content="https://plants.snapcollectibles.com/assets/img/og.png" />
 
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/site.css?v=2" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=3" />
 
   <script type="application/ld+json">
   {
@@ -35,14 +36,28 @@
     "@type": "SoftwareApplication",
     "name": "Snap Plants",
     "applicationCategory": "LifestyleApplication",
-    "operatingSystem": "iOS, Android",
-    "description": "Photograph a plant. Get assistive ID and care notes. Keep a collection. Trade with other plant parents.",
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/PreOrder",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "operatingSystem": "iOS",
+    "description": "Snap Plants identifies and diagnoses plants from a photo, keeps a collection, and lets collectors trade and chat.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Snap Plants Pro monthly",
+        "price": "1.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Snap Plants Pro annual",
+        "price": "14.99",
+        "priceCurrency": "USD"
+      }
+    ]
   }
   </script>
 </head>
@@ -51,17 +66,14 @@
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="#top">
-        <img src="assets/img/mark.svg" width="28" height="28" alt="" />
+      <a class="brand" href="/">
+        <img src="/assets/img/mark.svg" width="28" height="28" alt="" />
         <span class="brand-name">Snap Plants</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#identify">Identify</a>
-        <a href="#collection">Collection</a>
-        <a href="#trades">Trades</a>
-        <a href="#faq">FAQ</a>
-        <a href="privacy.html">Privacy</a>
-        <a class="btn btn-primary nav-cta" href="#download">Request beta</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/support">Support</a>
+        <a href="/terms">Terms of Use</a>
       </nav>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
         <span class="bars" aria-hidden="true"></span>
@@ -70,397 +82,92 @@
   </header>
 
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
-    <a href="#identify">Identify</a>
-    <a href="#collection">Collection</a>
-    <a href="#trades">Trades</a>
-    <a href="#faq">FAQ</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="#download">Request beta</a>
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/support">Support</a>
+    <a href="/terms">Terms of Use</a>
   </nav>
 
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-bg" aria-hidden="true">
-        <img src="assets/img/hero-leaf.webp" alt="" width="1280" height="720" />
+        <img src="/assets/img/hero-leaf.webp" alt="" width="1280" height="720" />
       </div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="kicker">iOS + Android · In beta</p>
+          <p class="kicker">True Family · iOS</p>
           <h1 class="display">Snap<br />Plants</h1>
-          <p class="hero-promise">Identify. Collect. Trade.</p>
-          <p class="hero-pitch">Photograph a plant. Pick a category. Get assistive ID, a care snapshot, and toxicity notes. Save it to My Plants, then trade with other plant parents — on iPhone and Android.</p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="#download">Request beta access</a>
-            <a class="btn btn-ghost" href="#identify">See how it IDs</a>
+          <p class="hero-promise hero-tagline">Identify · Diagnose · Care · Trade</p>
+          <p class="hero-pitch">Snap Plants identifies and diagnoses plants from a photo, keeps a collection, and lets collectors trade and chat.</p>
+          <p class="muted">The app is an independent collector tool. It is not affiliated with any nursery, brand, or trademark owner.</p>
+          <p class="hero-micro">Operator: True Family · <a href="mailto:admin@snapcollectibles.com">admin@snapcollectibles.com</a></p>
+          <div class="btn-row" style="margin-top: 22px;">
+            <a class="btn btn-ghost" href="/privacy">Privacy Policy</a>
+            <a class="btn btn-ghost" href="/support">Support</a>
+            <a class="btn btn-ghost" href="/terms">Terms of Use</a>
           </div>
-          <p class="hero-micro">iOS and Android in beta · Assistive ID, not a botanist · Peer-to-peer trades · Your collection stays yours</p>
         </div>
 
         <div class="hero-stage">
           <div class="hero-phones">
             <figure class="device device-float device-back">
-              <img src="assets/screens/Scan.webp" width="900" height="1948" alt="Snap Plants scan screen asking what kind of plant this is, with houseplants, succulents, outdoor, trees, herbs, vegetables, and wildflowers." />
+              <img src="/assets/screens/Scan.webp" width="900" height="1948" alt="Snap Plants scan screen for photographing a plant." />
             </figure>
             <figure class="device device-float device-main">
-              <img src="assets/screens/Plant1.webp" width="900" height="1948" alt="Diagnosis result for a snake plant, Sansevieria trifasciata, 95 percent confidence, with light, water, and humidity care snapshot." />
+              <img src="/assets/screens/Plant1.webp" width="900" height="1948" alt="A plant identification result with a care snapshot." />
             </figure>
           </div>
-          <div class="hero-chips">
-            <div class="chip chip-health">
-              <div class="label">Top match</div>
-              <strong>Snake Plant · 95%</strong>
-              <span>Sansevieria trifasciata</span>
-            </div>
-            <div class="chip chip-dna">
-              <div class="label">Scan</div>
-              <strong>Houseplants</strong>
-              <span>One plant, fill the frame</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <div class="strip">
-      <div class="wrap strip-row">
-        <span><b>Identify</b> Camera or gallery</span>
-        <span><b>Care</b> Light, water, toxicity</span>
-        <span><b>Shelf</b> My Plants</span>
-        <span><b>Trade</b> Peer-to-peer</span>
-      </div>
-    </div>
-
-    <section class="section" id="who">
+    <section class="section" id="plans">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker">Who it’s for</p>
-          <h2 class="display">Built for the sill, the garden, the swap.</h2>
-          <p class="lede muted">Indoor parents, outdoor gardeners, succulent collectors, and traders share the same shelf. Categories change the hint. The honesty does not: ID is assistive.</p>
+          <p class="kicker">Free and Pro</p>
+          <h2 class="display">What stays free, and what Pro adds.</h2>
         </div>
-        <div class="audience">
-          <article>
-            <h3>Indoor</h3>
-            <p>Houseplants on the sill. Snap the leaf, save the care notes, and remember which pot is which before you overwater it again.</p>
-          </article>
-          <article>
-            <h3>Garden</h3>
-            <p>Outdoor plants, trees, shrubs, herbs, vegetables, wildflowers. Tag the bed. Lookup links when you want a second opinion.</p>
-          </article>
-          <article>
-            <h3>Succulent</h3>
-            <p>Thick-leaf plants and cacti. Confidence scores and lookalike notes so you can argue with the result, not a shopping blog.</p>
-          </article>
-          <article>
-            <h3>Trader</h3>
-            <p>Post from inventory, browse the feed, chat in-app. Swaps are between plant parents. Snap Plants does not insure them.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pillars" style="padding-top: 0;">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">What ships</p>
-          <h2 class="display">Six things on the phone, not on a slide.</h2>
-        </div>
-        <div class="pillar-grid">
+        <div class="plan-grid">
           <article class="pillar">
-            <div class="num">01</div>
-            <h3>Camera scan</h3>
-            <p>Photograph one plant, or pick from the gallery. Categories are optional hints — the photo is what gets identified.</p>
+            <div class="num">Free</div>
+            <h3>Collector basics</h3>
+            <ul>
+              <li>Unlimited collection, catalog browsing, and browsing trades and events.</li>
+              <li>25 plant identifications and care lookups per calendar month.</li>
+              <li>1 trade listing.</li>
+              <li>Interest on 1 other listing.</li>
+              <li>20 messages on each of those two threads.</li>
+            </ul>
           </article>
           <article class="pillar">
-            <div class="num">02</div>
-            <h3>Assistive ID</h3>
-            <p>Suggested name, scientific name, confidence. Care snapshot. Toxicity notes. Lookup links. Learning and reference. Not a botanist.</p>
-          </article>
-          <article class="pillar">
-            <div class="num">03</div>
-            <h3>Diagnosis</h3>
-            <p>Symptoms, possible causes, care advice. Android also splits Identify, Diagnose Issue, Toxic Check, and Weed ID.</p>
-          </article>
-          <article class="pillar">
-            <div class="num">04</div>
-            <h3>My Plants</h3>
-            <p>A list and a shelf of what you actually own. Filter All, Wishlist, or Selling. Notes and location tags live on the plant.</p>
-          </article>
-          <article class="pillar">
-            <div class="num">05</div>
-            <h3>Peer trades</h3>
-            <p>Post an offer from inventory, browse the feed, open detail, chat. Contact details are yours to share.</p>
-          </article>
-          <article class="pillar">
-            <div class="num">06</div>
-            <h3>Backup</h3>
-            <p>Cloud backup and restore while signed in. Export and import CSV where the app supports it. A new phone should not wipe the shelf.</p>
+            <div class="num">Snap Plants Pro</div>
+            <h3>$14.99 per year or $1.99 per month</h3>
+            <ul>
+              <li>Billed by Apple.</li>
+              <li>Unlimited identification and lookups.</li>
+              <li>Unlimited listings, interests, and chat.</li>
+              <li>Multi-model identify.</li>
+              <li>Posting plant events plus event chat.</li>
+            </ul>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="identify">
-      <div class="wrap split">
-        <div>
-          <p class="kicker">Identify <span class="badge badge-live">Live</span></p>
-          <h2 class="display">Snap a plant. Pick a category. Read the score.</h2>
-          <p class="lede">Houseplants, succulents and cacti, outdoor garden plants, trees and shrubs, herbs, vegetables, wildflowers, or not sure. Categories narrow the hint. The photo still does the work.</p>
-          <p class="muted">You get a suggested name, scientific name, confidence, a care snapshot (light, water, humidity, soil), toxicity notes, and lookup links — PlantNet, Wikipedia, RHS, Missouri Botanical, iNaturalist. If the match is uncertain, treat it as a starting point.</p>
-          <ul class="feature-list">
-            <li>Camera or gallery. One plant, fill the frame, decent light.</li>
-            <li>Optional category chips — they hint the catalog, they do not replace the image.</li>
-            <li>Android: Identify Plant, Diagnose Issue, Toxic Check, and Weed ID as separate scan modes.</li>
-            <li>Diagnosis history so you can revisit a maybe.</li>
-            <li>Identifications are estimates for learning and reference. Not a certified botanical ID.</li>
-          </ul>
-        </div>
-        <figure class="device device-solo">
-          <img src="assets/screens/Scan.webp" width="900" height="1948" alt="Snap Plants scan: What kind of plant is this, with houseplants, succulents and cacti, outdoor garden plants, trees and shrubs, herbs, vegetables, wildflowers, and Not Sure." />
-        </figure>
-      </div>
-      <div class="wrap" style="margin-top: 36px;">
-        <div class="device-row">
-          <figure class="device">
-            <img src="assets/screens/Plant1.webp" width="900" height="1948" alt="Snake plant diagnosis with 95 percent confidence and a care snapshot for light, water, and humidity." />
-            <figcaption>ID + care</figcaption>
-          </figure>
-          <figure class="device">
-            <img src="assets/screens/Plant2.webp" width="900" height="1948" alt="Diagnosis continuation: soil, common pests, mature size, symptoms, possible causes, and care advice." />
-            <figcaption>Diagnosis</figcaption>
-          </figure>
-          <figure class="device">
-            <img src="assets/screens/Plant3.webp" width="900" height="1948" alt="Toxicity notes, additional notes, and helpful resources linking to PlantNet, Wikipedia, RHS, Missouri Botanical, and iNaturalist." />
-            <figcaption>Lookups</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="collection">
-      <div class="wrap split reverse">
-        <div>
-          <p class="kicker">Collection <span class="badge badge-live">Live</span></p>
-          <h2 class="display">Journal it. Shelf it. Flag it for sale.</h2>
-          <p class="lede">More than an identifier. A personal collection with search, wishlist, and selling filters.</p>
-          <ul class="feature-list">
-            <li>My Plants list with All, Wishlist, and Selling.</li>
-            <li>Plant detail: notes, location tags, diagnosis history.</li>
-            <li>Manual add when you already know what you have.</li>
-            <li>Swipe left to delete. Swipe right to wishlist or pre-fill a trade.</li>
-            <li>Import / export CSV. Cloud backup / restore while signed in.</li>
-          </ul>
-        </div>
-        <figure class="device device-solo">
-          <img src="assets/screens/MyPlants.webp" width="900" height="1948" alt="My Plants collection listing a snake plant at 95 percent, with All, Wishlist, and Selling filters." />
-        </figure>
       </div>
     </section>
 
     <section class="ember-band">
       <div class="wrap">
-        <p class="kicker">Honest ID</p>
-        <h2 class="display">A photo is not a botanist.</h2>
-        <p class="lede" style="max-width: 46ch;">AI identification is assistive — for learning and reference. It is not a substitute for a professional botanist, horticulturist, or veterinarian. Confirm anything about edibility, toxicity, or disease before you act.</p>
+        <p class="kicker">Trades and identification</p>
+        <h2 class="display">Notes, not a checkout.</h2>
+        <p class="lede">Dollar and shipping fields on a trade are notes. The app does not take payment for plants.</p>
+        <p class="lede">Identification is educational and is not professional botanical advice. Confirm identity and toxicity before ingesting a plant or placing it near pets.</p>
       </div>
     </section>
 
-    <section class="section" id="trades">
-      <div class="wrap split">
-        <div>
-          <p class="kicker">Trades <span class="badge badge-live">Live</span></p>
-          <h2 class="display">Swap from inventory. Chat in the app.</h2>
-          <p class="lede">Pick a plant you already logged. Post the offer. Browse the feed. Open detail. Message.</p>
-          <p class="muted">Trades are peer-to-peer between plant parents. Snap Plants does not insure, escrow, ship, or take payment. Contact details — username and optional Facebook helpers — are information you choose to share.</p>
-          <ul class="feature-list">
-            <li>Sign in to post and view trades. Apple on iOS. Google on Android.</li>
-            <li>Swipe right on a collection plant to pre-fill a trade.</li>
-            <li>Selling filter on My Plants so for-sale plants are not mixed into the rest of the shelf.</li>
-          </ul>
-        </div>
-        <figure class="device device-solo">
-          <img src="assets/screens/MyPlants.webp" width="900" height="1948" alt="My Plants with Selling and Wishlist filters used to flag plants for trade." />
-        </figure>
-      </div>
-    </section>
-
-    <section class="section" id="how">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">How it works</p>
-          <h2 class="display">Snap. Identify. Save. Trade.</h2>
-        </div>
-        <div class="steps">
-          <article class="step">
-            <h3>Snap the plant</h3>
-            <p>Open the camera or pick a gallery photo. One plant, fill the frame. Crop if you have to. Four plants in one shot will lie to you.</p>
-          </article>
-          <article class="step">
-            <h3>Identify by category</h3>
-            <p>Optional chips: houseplants, succulents, outdoor, trees, herbs, vegetables, wildflowers, not sure. Review confidence, care, toxicity, and lookups.</p>
-          </article>
-          <article class="step">
-            <h3>Save to My Plants</h3>
-            <p>Add notes and a location tag. Flag wishlist or selling. See it on the shelf. The values you type are yours.</p>
-          </article>
-          <article class="step">
-            <h3>Trade if you want</h3>
-            <p>Post from inventory, browse the feed, chat in-app. The swap is between you and the other plant parent.</p>
-          </article>
-          <article class="step">
-            <h3>Back it up</h3>
-            <p>Sign in. Sync or export CSV. A future beta should not be the reason the shelf disappears.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="settings" style="padding-top:0;">
-      <div class="wrap split reverse">
-        <div>
-          <p class="kicker">Account <span class="badge badge-live">Live</span></p>
-          <h2 class="display">Sign in, export, bring your own key if you want.</h2>
-          <p class="muted">Scan and journal without an account. Sign-in unlocks backup, restore, and trades. An optional OpenRouter key lives in Settings — the app can use a default until you add your own. Identification remains educational. The disclaimer in Settings says so out loud.</p>
-          <ul class="feature-list">
-            <li>iOS: Sign in with Apple. Export / import collection CSV.</li>
-            <li>Android: Sign in with Google. CSV import / export. AI Botanist chat and a plant encyclopedia from Settings.</li>
-            <li>OpenRouter key can be tested and saved on-device.</li>
-          </ul>
-        </div>
-        <figure class="device device-solo">
-          <img src="assets/screens/Settings.webp" width="900" height="1948" alt="Settings with OpenRouter API key, export and import collection CSV, and a disclaimer that identification is educational only." />
-        </figure>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">FAQ</p>
-          <h2 class="display">Straight answers for plant people.</h2>
-          <p class="lede muted">What Snap Plants does — and what it does not claim.</p>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item">
-            <summary>How accurate is plant identification?</summary>
-            <p>Identification is assistive and can be wrong. Photo quality, lighting, and similar-looking species all affect results. Use the lookup links, and always verify important decisions — especially edibility or toxicity — with trusted sources or a professional.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do I need to sign in?</summary>
-            <p>You can scan and journal without an account. Sign in with Apple (iOS) or Google (Android) unlocks cloud backup, trades, and account features. Stay signed in if you want the shelf to follow you to a new phone.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Why pick a category when I scan?</summary>
-            <p>Houseplants, succulents, outdoor, trees, herbs, vegetables, or wildflowers help focus identification. Use Not Sure when you are not sure. The photo is still what gets identified. On Android you can also choose Identify, Diagnose, Toxic Check, or Weed ID first.</p>
-          </details>
-          <details class="faq-item">
-            <summary>How do trades work?</summary>
-            <p>Trades are peer-to-peer between users. Post offers, pick a plant from inventory, browse the feed, open detail, and chat in-app. Snap Plants does not insure, ship, or process payments.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What is the camera used for?</summary>
-            <p>Photographing plants for identification, diagnosis, and your collection journal. Not unrelated uses.</p>
-          </details>
-          <details class="faq-item">
-            <summary>How does the Android beta invite work?</summary>
-            <p>Google Play internal testing does not email testers automatically. After you request Android beta, this site shows the Play test URL. Copy it and keep it. The URL becomes active once your email is added to the tester list — please allow up to a few hours.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="privacy">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">Ownership</p>
-          <h2 class="display">Your shelf is yours. Photos are for plants.</h2>
-          <p class="lede muted">Camera and photos are used for plant identification and the collection journal. Trade contact details are information you choose to provide. Sign-in is for account features like backup and trades.</p>
-        </div>
-        <div class="pillar-grid">
-          <article class="pillar">
-            <div class="num">Camera</div>
-            <h3>Plants only</h3>
-            <p>Photos support ID, diagnosis, and journaling. They are not a general-purpose social feed.</p>
-          </article>
-          <article class="pillar">
-            <div class="num">Sign-in</div>
-            <h3>Apple or Google</h3>
-            <p>iOS uses Sign in with Apple. Android uses Google. Cloud backup requires an account.</p>
-          </article>
-          <article class="pillar">
-            <div class="num">Trades</div>
-            <h3>You share contact</h3>
-            <p>Username and optional Facebook helpers are user-provided so other plant parents can reach you.</p>
-          </article>
-          <article class="pillar">
-            <div class="num">This site</div>
-            <h3>No analytics SDK</h3>
-            <p>The beta form sends App name, phone OS, and email to admin@snapcollectibles.com. Nothing else.</p>
-          </article>
-        </div>
-        <p style="margin-top:24px;"><a href="privacy.html">Read the full privacy page →</a></p>
-      </div>
-    </section>
-
-    <section class="section" id="download">
-      <div class="wrap">
-        <div class="cta-panel">
-          <p class="kicker">Beta</p>
-          <h2 class="display">iOS and Android. Both in beta.</h2>
-          <p class="lede muted" style="max-width:44ch;">Request a tester slot. We get App name, phone OS, and your email — nothing else. Android testers must copy the Play test URL on the next screen. Google will not email it.</p>
-          <div class="btn-row" style="margin-top:8px;">
-            <span class="store-btn" aria-disabled="true">
-              <small>In beta</small>
-              <b>iOS</b>
-            </span>
-            <span class="store-btn" aria-disabled="true">
-              <small>In beta</small>
-              <b>Android</b>
-            </span>
-          </div>
-
-          <div class="android-persist" id="android-persist" hidden>
-            <p class="kicker">Android tester link</p>
-            <h3>Keep this URL.</h3>
-            <p class="tester-warn">This URL will be active once your email has been added to the tester list. Please allow up to a few hours. The Google Play interface does not auto-send emails to testers.</p>
-            <div class="tester-url-row">
-              <code class="tester-url" data-tester-url tabindex="0" aria-label="Android tester URL"></code>
-              <button class="btn btn-ghost" type="button" id="copy-tester-url-persist">Copy</button>
-            </div>
-            <p class="form-status" data-state="ok">Request received. You confirmed you copied the link.</p>
-          </div>
-
-          <form class="form" id="beta-form" novalidate>
-            <input type="hidden" name="_subject" value="Snap Plants beta tester request" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-            <label for="app-name">App name</label>
-            <input id="app-name" name="App Name" type="text" value="Snap Plants" readonly />
-
-            <fieldset class="os-fieldset">
-              <legend>Phone OS</legend>
-              <div class="os-choice">
-                <label class="os-card">
-                  <input type="radio" name="Phone OS" value="iOS" required />
-                  <span class="os-card-title">iOS</span>
-                  <span class="os-card-meta">iPhone + iPad</span>
-                </label>
-                <label class="os-card">
-                  <input type="radio" name="Phone OS" value="Android" />
-                  <span class="os-card-title">Android</span>
-                  <span class="os-card-meta">Phone + tablet</span>
-                </label>
-              </div>
-            </fieldset>
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@greenhouse.local" required />
-
-            <button class="btn btn-primary" type="submit">Request to be a beta tester</button>
-            <p class="form-note">Sends App name, phone OS, and email to <span class="mono">admin@snapcollectibles.com</span>. No newsletter. Android: you must copy the Play test URL after submit.</p>
-            <p class="form-status" id="beta-status" role="status"></p>
-          </form>
-        </div>
+    <section class="section">
+      <div class="wrap prose">
+        <h2>Privacy, support, and terms</h2>
+        <p><a href="/privacy">Privacy Policy</a> · <a href="/support">Support</a> · <a href="/terms">Terms of Use</a></p>
+        <p>Questions: <a href="mailto:admin@snapcollectibles.com">admin@snapcollectibles.com</a></p>
       </div>
     </section>
   </main>
@@ -468,66 +175,31 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="#top">
-          <img src="assets/img/mark.svg" width="28" height="28" alt="" />
+        <a class="brand" href="/">
+          <img src="/assets/img/mark.svg" width="28" height="28" alt="" />
           <span class="brand-name">Snap Plants</span>
         </a>
-        <p>Identify plants. Keep the shelf. Trade with plant parents.</p>
+        <p>Identify · Diagnose · Care · Trade</p>
+        <p>An independent collector tool from True Family. Not affiliated with any nursery, brand, or trademark owner.</p>
       </div>
       <div class="footer-col">
-        <h2>Product</h2>
-        <a href="#identify">Identify</a>
-        <a href="#collection">Collection</a>
-        <a href="#trades">Trades</a>
-        <a href="#faq">FAQ</a>
+        <h2>Pages</h2>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/support">Support</a>
+        <a href="/terms">Terms of Use</a>
       </div>
       <div class="footer-col">
-        <h2>Trust</h2>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html">Support</a>
-      </div>
-      <div class="footer-col">
-        <h2>Get it</h2>
-        <a href="#download">Request beta</a>
-        <span class="muted">iOS + Android beta</span>
+        <h2>Contact</h2>
+        <a href="mailto:admin@snapcollectibles.com">admin@snapcollectibles.com</a>
+        <span class="muted">True Family</span>
       </div>
     </div>
     <div class="wrap footer-legal">
-      <span>© <span data-year></span> Snap Plants. All rights reserved.</span>
-      <span>Assistive ID · Peer-to-peer trades · iOS + Android beta</span>
+      <span>© <span data-year></span> True Family</span>
+      <span>Snap Plants · Identify · Diagnose · Care · Trade</span>
     </div>
   </footer>
 
-  <div class="tester-modal" id="tester-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tester-title">
-    <div class="tester-card">
-      <p class="kicker">Android tester link</p>
-      <h2 class="display" id="tester-title">Copy this URL. Keep it.</h2>
-      <p class="tester-warn">This URL will be active once your email has been added to the tester list. Please allow up to a few hours. The Google Play interface does not auto-send emails to testers.</p>
-      <p class="muted" style="margin:0 0 14px;">Request email: <span class="mono" data-tester-email></span></p>
-      <div class="tester-url-row">
-        <code class="tester-url" id="tester-url" data-tester-url tabindex="0" aria-label="Android tester URL"></code>
-        <button class="btn btn-primary" type="button" id="copy-tester-url">Copy</button>
-      </div>
-      <label class="tester-ack" for="tester-copied">
-        <input id="tester-copied" type="checkbox" />
-        <span>I have copied this URL and will keep it. I understand it will not work until my email is on the tester list.</span>
-      </label>
-      <button class="btn btn-primary" type="button" id="tester-done" disabled>I’ve copied and kept this URL</button>
-      <p class="form-note" style="margin-top:12px;">You cannot dismiss this until you check the box. Google will not email you this link.</p>
-    </div>
-  </div>
-
-  <svg width="0" height="0" aria-hidden="true" focusable="false">
-    <defs>
-      <linearGradient id="ember" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#FFD600" />
-        <stop offset="0.55" stop-color="#FF6A00" />
-        <stop offset="1" stop-color="#FF2D2D" />
-      </linearGradient>
-    </defs>
-  </svg>
-
-  <script src="assets/js/site.js"></script>
+  <script src="/assets/js/site.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
   "name": "Snap Plants",
   "short_name": "Snap Plants",
-  "description": "Identify plants. Collect and trade.",
+  "description": "Identify, diagnose, care, and trade plants. An independent collector tool from True Family.",
   "start_url": "/",
   "display": "browser",
   "background_color": "#050505",
